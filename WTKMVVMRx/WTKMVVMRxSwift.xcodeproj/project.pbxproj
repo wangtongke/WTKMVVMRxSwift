@@ -1,0 +1,881 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02258DC11014FAB82CE8A6E6 /* Pods_WTKMVVMRxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C794E5E0E3E7D666502456D /* Pods_WTKMVVMRxSwift.framework */; };
+		F501D7081E262B4F0042E21F /* WTKBasedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501D7071E262B4F0042E21F /* WTKBasedVC.swift */; };
+		F501D70A1E262C4A0042E21F /* WTKBasedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501D7091E262C4A0042E21F /* WTKBasedVM.swift */; };
+		F501D70C1E262C6C0042E21F /* WTKTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501D70B1E262C6C0042E21F /* WTKTabbarController.swift */; };
+		F501D70E1E262C870042E21F /* WTKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501D70D1E262C870042E21F /* WTKNavigationController.swift */; };
+		F501D7111E262DCE0042E21F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F501D70F1E262DCE0042E21F /* Main.storyboard */; };
+		F501D7131E2719890042E21F /* launchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F501D7121E2719890042E21F /* launchImage.png */; };
+		F501D7171E271D5D0042E21F /* Tabbar.plist in Resources */ = {isa = PBXBuildFile; fileRef = F501D7161E271D5D0042E21F /* Tabbar.plist */; };
+		F501D7191E271F3B0042E21F /* WTKHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501D7181E271F3B0042E21F /* WTKHomeVC.swift */; };
+		F501D71B1E271F920042E21F /* WTKProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501D71A1E271F920042E21F /* WTKProductVC.swift */; };
+		F501D71D1E271FA70042E21F /* WTKCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501D71C1E271FA70042E21F /* WTKCategoryVC.swift */; };
+		F501D71F1E271FB40042E21F /* WTKMeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501D71E1E271FB40042E21F /* WTKMeVC.swift */; };
+		F501D7211E271FCB0042E21F /* WTKHomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501D7201E271FCB0042E21F /* WTKHomeVM.swift */; };
+		F501D7251E271FF00042E21F /* WTKCategoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501D7241E271FF00042E21F /* WTKCategoryVM.swift */; };
+		F501D7271E271FFC0042E21F /* WTKMeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501D7261E271FFC0042E21F /* WTKMeVM.swift */; };
+		F501D7291E2721C10042E21F /* WTKProductVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501D7281E2721C10042E21F /* WTKProductVM.swift */; };
+		F50C01D61E31BAA600B03DBA /* WTKHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C01D41E31BAA600B03DBA /* WTKHomeCollectionViewCell.swift */; };
+		F50C01D71E31BAA600B03DBA /* WTKHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F50C01D51E31BAA600B03DBA /* WTKHomeCollectionViewCell.xib */; };
+		F50C01DA1E31DCCC00B03DBA /* WTKRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C01D91E31DCCC00B03DBA /* WTKRequestManager.swift */; };
+		F50C01DC1E31EB2A00B03DBA /* WTKURLHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C01DB1E31EB2A00B03DBA /* WTKURLHeader.swift */; };
+		F50C01DE1E3210DD00B03DBA /* WTKHomeChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C01DD1E3210DD00B03DBA /* WTKHomeChoiceView.swift */; };
+		F50C01E01E35F5BA00B03DBA /* WTKUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C01DF1E35F5BA00B03DBA /* WTKUser.swift */; };
+		F5317CEF1E25D60300D8F9AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5317CEE1E25D60300D8F9AB /* AppDelegate.swift */; };
+		F5317CF11E25D60300D8F9AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5317CF01E25D60300D8F9AB /* ViewController.swift */; };
+		F5317CF61E25D60300D8F9AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5317CF51E25D60300D8F9AB /* Assets.xcassets */; };
+		F5317CF91E25D60300D8F9AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5317CF71E25D60300D8F9AB /* LaunchScreen.storyboard */; };
+		F5317D041E25D60400D8F9AB /* WTKMVVMRxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5317D031E25D60400D8F9AB /* WTKMVVMRxSwiftTests.swift */; };
+		F5317D0F1E25D60400D8F9AB /* WTKMVVMRxSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5317D0E1E25D60400D8F9AB /* WTKMVVMRxSwiftUITests.swift */; };
+		F5ACD23C1E2F6F1F007F1C8E /* UIImage+WTK.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ACD23B1E2F6F1F007F1C8E /* UIImage+WTK.m */; };
+		F5ACD2DF1E309CA4007F1C8E /* BarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ACD2DA1E309CA4007F1C8E /* BarItem.m */; };
+		F5ACD2E01E309CA4007F1C8E /* CBStoreHouseRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ACD2DC1E309CA4007F1C8E /* CBStoreHouseRefreshControl.m */; };
+		F5ACD2E11E309CA4007F1C8E /* storehouse.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5ACD2DD1E309CA4007F1C8E /* storehouse.plist */; };
+		F5ACD2E21E309CA4007F1C8E /* WANGTONGKE.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5ACD2DE1E309CA4007F1C8E /* WANGTONGKE.plist */; };
+		F5ACD2E41E309E86007F1C8E /* WTKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ACD2E31E309E86007F1C8E /* WTKTableViewController.swift */; };
+		F5ACD2E61E309EB5007F1C8E /* WTKTableVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ACD2E51E309EB5007F1C8E /* WTKTableVM.swift */; };
+		F5D63B631E287FD500A92878 /* WTKBasedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D63B621E287FD500A92878 /* WTKBasedCategory.swift */; };
+		F5D63B651E28A25D00A92878 /* WTKViewModelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D63B641E28A25D00A92878 /* WTKViewModelServices.swift */; };
+		F5D63B6C1E28A8DE00A92878 /* WTKViewModelNvigationImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D63B6B1E28A8DE00A92878 /* WTKViewModelNvigationImpl.swift */; };
+		F5DDA9F51E2F4177009A9F8A /* WTKHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DDA9F41E2F4177009A9F8A /* WTKHeader.swift */; };
+		F5FF286B1E485952008E3091 /* WTKChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FF286A1E485952008E3091 /* WTKChannel.swift */; };
+		F5FF286D1E4859C2008E3091 /* WTKBasedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FF286C1E4859C2008E3091 /* WTKBasedModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F5317D001E25D60400D8F9AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5317CE31E25D60300D8F9AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5317CEA1E25D60300D8F9AB;
+			remoteInfo = WTKMVVMRxSwift;
+		};
+		F5317D0B1E25D60400D8F9AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5317CE31E25D60300D8F9AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5317CEA1E25D60300D8F9AB;
+			remoteInfo = WTKMVVMRxSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		44DC6629E05F73D645C90C4A /* Pods-WTKMVVMRxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTKMVVMRxSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WTKMVVMRxSwift/Pods-WTKMVVMRxSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		74E274289FA3412834E7CF15 /* Pods-WTKMVVMRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTKMVVMRxSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-WTKMVVMRxSwift/Pods-WTKMVVMRxSwift.release.xcconfig"; sourceTree = "<group>"; };
+		8C794E5E0E3E7D666502456D /* Pods_WTKMVVMRxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WTKMVVMRxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F501D7071E262B4F0042E21F /* WTKBasedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKBasedVC.swift; sourceTree = "<group>"; };
+		F501D7091E262C4A0042E21F /* WTKBasedVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKBasedVM.swift; sourceTree = "<group>"; };
+		F501D70B1E262C6C0042E21F /* WTKTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKTabbarController.swift; sourceTree = "<group>"; };
+		F501D70D1E262C870042E21F /* WTKNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKNavigationController.swift; sourceTree = "<group>"; };
+		F501D7101E262DCE0042E21F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F501D7121E2719890042E21F /* launchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage.png; sourceTree = "<group>"; };
+		F501D7161E271D5D0042E21F /* Tabbar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tabbar.plist; sourceTree = "<group>"; };
+		F501D7181E271F3B0042E21F /* WTKHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKHomeVC.swift; sourceTree = "<group>"; };
+		F501D71A1E271F920042E21F /* WTKProductVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKProductVC.swift; sourceTree = "<group>"; };
+		F501D71C1E271FA70042E21F /* WTKCategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKCategoryVC.swift; sourceTree = "<group>"; };
+		F501D71E1E271FB40042E21F /* WTKMeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKMeVC.swift; sourceTree = "<group>"; };
+		F501D7201E271FCB0042E21F /* WTKHomeVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKHomeVM.swift; sourceTree = "<group>"; };
+		F501D7241E271FF00042E21F /* WTKCategoryVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKCategoryVM.swift; sourceTree = "<group>"; };
+		F501D7261E271FFC0042E21F /* WTKMeVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKMeVM.swift; sourceTree = "<group>"; };
+		F501D7281E2721C10042E21F /* WTKProductVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKProductVM.swift; sourceTree = "<group>"; };
+		F50C01D41E31BAA600B03DBA /* WTKHomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		F50C01D51E31BAA600B03DBA /* WTKHomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WTKHomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		F50C01D91E31DCCC00B03DBA /* WTKRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKRequestManager.swift; sourceTree = "<group>"; };
+		F50C01DB1E31EB2A00B03DBA /* WTKURLHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKURLHeader.swift; sourceTree = "<group>"; };
+		F50C01DD1E3210DD00B03DBA /* WTKHomeChoiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKHomeChoiceView.swift; sourceTree = "<group>"; };
+		F50C01DF1E35F5BA00B03DBA /* WTKUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKUser.swift; sourceTree = "<group>"; };
+		F5317CEB1E25D60300D8F9AB /* WTKMVVMRxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTKMVVMRxSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5317CEE1E25D60300D8F9AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F5317CF01E25D60300D8F9AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F5317CF51E25D60300D8F9AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5317CF81E25D60300D8F9AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F5317CFA1E25D60300D8F9AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5317CFF1E25D60400D8F9AB /* WTKMVVMRxSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTKMVVMRxSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5317D031E25D60400D8F9AB /* WTKMVVMRxSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTKMVVMRxSwiftTests.swift; sourceTree = "<group>"; };
+		F5317D051E25D60400D8F9AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5317D0A1E25D60400D8F9AB /* WTKMVVMRxSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTKMVVMRxSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5317D0E1E25D60400D8F9AB /* WTKMVVMRxSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTKMVVMRxSwiftUITests.swift; sourceTree = "<group>"; };
+		F5317D101E25D60400D8F9AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5317D1C1E25E4C300D8F9AB /* WTKMVVMRxSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WTKMVVMRxSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		F5ACD23A1E2F6F1F007F1C8E /* UIImage+WTK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WTK.h"; sourceTree = "<group>"; };
+		F5ACD23B1E2F6F1F007F1C8E /* UIImage+WTK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WTK.m"; sourceTree = "<group>"; };
+		F5ACD2D91E309CA4007F1C8E /* BarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarItem.h; sourceTree = "<group>"; };
+		F5ACD2DA1E309CA4007F1C8E /* BarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarItem.m; sourceTree = "<group>"; };
+		F5ACD2DB1E309CA4007F1C8E /* CBStoreHouseRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStoreHouseRefreshControl.h; sourceTree = "<group>"; };
+		F5ACD2DC1E309CA4007F1C8E /* CBStoreHouseRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStoreHouseRefreshControl.m; sourceTree = "<group>"; };
+		F5ACD2DD1E309CA4007F1C8E /* storehouse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storehouse.plist; sourceTree = "<group>"; };
+		F5ACD2DE1E309CA4007F1C8E /* WANGTONGKE.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WANGTONGKE.plist; sourceTree = "<group>"; };
+		F5ACD2E31E309E86007F1C8E /* WTKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKTableViewController.swift; sourceTree = "<group>"; };
+		F5ACD2E51E309EB5007F1C8E /* WTKTableVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKTableVM.swift; sourceTree = "<group>"; };
+		F5D63B621E287FD500A92878 /* WTKBasedCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKBasedCategory.swift; sourceTree = "<group>"; };
+		F5D63B641E28A25D00A92878 /* WTKViewModelServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKViewModelServices.swift; sourceTree = "<group>"; };
+		F5D63B6B1E28A8DE00A92878 /* WTKViewModelNvigationImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKViewModelNvigationImpl.swift; sourceTree = "<group>"; };
+		F5DDA9F41E2F4177009A9F8A /* WTKHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKHeader.swift; sourceTree = "<group>"; };
+		F5FF286A1E485952008E3091 /* WTKChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKChannel.swift; sourceTree = "<group>"; };
+		F5FF286C1E4859C2008E3091 /* WTKBasedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKBasedModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F5317CE81E25D60300D8F9AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02258DC11014FAB82CE8A6E6 /* Pods_WTKMVVMRxSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5317CFC1E25D60400D8F9AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5317D071E25D60400D8F9AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03D59C3C712E9040C23720EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C794E5E0E3E7D666502456D /* Pods_WTKMVVMRxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B5450912CECD562F6396D84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44DC6629E05F73D645C90C4A /* Pods-WTKMVVMRxSwift.debug.xcconfig */,
+				74E274289FA3412834E7CF15 /* Pods-WTKMVVMRxSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F501D6FC1E262A7C0042E21F /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				F501D6FD1E262A7C0042E21F /* Based */,
+				F501D6FE1E262A7C0042E21F /* Model */,
+				F501D6FF1E262A7C0042E21F /* View */,
+				F501D7011E262A7C0042E21F /* ViewModel */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		F501D6FD1E262A7C0042E21F /* Based */ = {
+			isa = PBXGroup;
+			children = (
+				F501D70B1E262C6C0042E21F /* WTKTabbarController.swift */,
+				F501D70D1E262C870042E21F /* WTKNavigationController.swift */,
+				F501D7071E262B4F0042E21F /* WTKBasedVC.swift */,
+				F501D7091E262C4A0042E21F /* WTKBasedVM.swift */,
+				F5D63B621E287FD500A92878 /* WTKBasedCategory.swift */,
+				F5D63B641E28A25D00A92878 /* WTKViewModelServices.swift */,
+				F5D63B6B1E28A8DE00A92878 /* WTKViewModelNvigationImpl.swift */,
+				F5ACD2E31E309E86007F1C8E /* WTKTableViewController.swift */,
+				F5ACD2E51E309EB5007F1C8E /* WTKTableVM.swift */,
+				F5FF286C1E4859C2008E3091 /* WTKBasedModel.swift */,
+			);
+			path = Based;
+			sourceTree = "<group>";
+		};
+		F501D6FE1E262A7C0042E21F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F50C01DF1E35F5BA00B03DBA /* WTKUser.swift */,
+				F5FF286A1E485952008E3091 /* WTKChannel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F501D6FF1E262A7C0042E21F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F50C01CC1E31AAC200B03DBA /* Cell */,
+				F50C01CD1E31AAC200B03DBA /* View */,
+				F501D7001E262A7C0042E21F /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F501D7001E262A7C0042E21F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F501D7181E271F3B0042E21F /* WTKHomeVC.swift */,
+				F501D71A1E271F920042E21F /* WTKProductVC.swift */,
+				F501D71C1E271FA70042E21F /* WTKCategoryVC.swift */,
+				F501D71E1E271FB40042E21F /* WTKMeVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F501D7011E262A7C0042E21F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F501D7201E271FCB0042E21F /* WTKHomeVM.swift */,
+				F501D7281E2721C10042E21F /* WTKProductVM.swift */,
+				F501D7241E271FF00042E21F /* WTKCategoryVM.swift */,
+				F501D7261E271FFC0042E21F /* WTKMeVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F501D7021E262A7C0042E21F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F5DDA9EA1E2F374F009A9F8A /* Vendor */,
+				F501D7031E262A7C0042E21F /* Image */,
+				F501D7161E271D5D0042E21F /* Tabbar.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F501D7031E262A7C0042E21F /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				F501D7121E2719890042E21F /* launchImage.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		F501D7041E262A7C0042E21F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F501D7051E262A7C0042E21F /* Category */,
+				F501D7061E262A7C0042E21F /* Tool */,
+				F5DDA9F41E2F4177009A9F8A /* WTKHeader.swift */,
+				F50C01DB1E31EB2A00B03DBA /* WTKURLHeader.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		F501D7051E262A7C0042E21F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F5ACD23A1E2F6F1F007F1C8E /* UIImage+WTK.h */,
+				F5ACD23B1E2F6F1F007F1C8E /* UIImage+WTK.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		F501D7061E262A7C0042E21F /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				F50C01D91E31DCCC00B03DBA /* WTKRequestManager.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		F50C01CC1E31AAC200B03DBA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F50C01D41E31BAA600B03DBA /* WTKHomeCollectionViewCell.swift */,
+				F50C01D51E31BAA600B03DBA /* WTKHomeCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F50C01CD1E31AAC200B03DBA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F50C01DD1E3210DD00B03DBA /* WTKHomeChoiceView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F5317CE21E25D60300D8F9AB = {
+			isa = PBXGroup;
+			children = (
+				F5317CED1E25D60300D8F9AB /* WTKMVVMRxSwift */,
+				F5317D021E25D60400D8F9AB /* WTKMVVMRxSwiftTests */,
+				F5317D0D1E25D60400D8F9AB /* WTKMVVMRxSwiftUITests */,
+				F5317CEC1E25D60300D8F9AB /* Products */,
+				5B5450912CECD562F6396D84 /* Pods */,
+				03D59C3C712E9040C23720EA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F5317CEC1E25D60300D8F9AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5317CEB1E25D60300D8F9AB /* WTKMVVMRxSwift.app */,
+				F5317CFF1E25D60400D8F9AB /* WTKMVVMRxSwiftTests.xctest */,
+				F5317D0A1E25D60400D8F9AB /* WTKMVVMRxSwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5317CED1E25D60300D8F9AB /* WTKMVVMRxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				F501D7021E262A7C0042E21F /* Resource */,
+				F501D7041E262A7C0042E21F /* Util */,
+				F501D6FC1E262A7C0042E21F /* Class */,
+				F5317CEE1E25D60300D8F9AB /* AppDelegate.swift */,
+				F5317CF01E25D60300D8F9AB /* ViewController.swift */,
+				F5317CF51E25D60300D8F9AB /* Assets.xcassets */,
+				F501D70F1E262DCE0042E21F /* Main.storyboard */,
+				F5317CF71E25D60300D8F9AB /* LaunchScreen.storyboard */,
+				F5317CFA1E25D60300D8F9AB /* Info.plist */,
+				F5317D1C1E25E4C300D8F9AB /* WTKMVVMRxSwift-Bridging-Header.h */,
+			);
+			path = WTKMVVMRxSwift;
+			sourceTree = "<group>";
+		};
+		F5317D021E25D60400D8F9AB /* WTKMVVMRxSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				F5317D031E25D60400D8F9AB /* WTKMVVMRxSwiftTests.swift */,
+				F5317D051E25D60400D8F9AB /* Info.plist */,
+			);
+			path = WTKMVVMRxSwiftTests;
+			sourceTree = "<group>";
+		};
+		F5317D0D1E25D60400D8F9AB /* WTKMVVMRxSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F5317D0E1E25D60400D8F9AB /* WTKMVVMRxSwiftUITests.swift */,
+				F5317D101E25D60400D8F9AB /* Info.plist */,
+			);
+			path = WTKMVVMRxSwiftUITests;
+			sourceTree = "<group>";
+		};
+		F5ACD2D81E309CA4007F1C8E /* CBRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				F5ACD2D91E309CA4007F1C8E /* BarItem.h */,
+				F5ACD2DA1E309CA4007F1C8E /* BarItem.m */,
+				F5ACD2DB1E309CA4007F1C8E /* CBStoreHouseRefreshControl.h */,
+				F5ACD2DC1E309CA4007F1C8E /* CBStoreHouseRefreshControl.m */,
+				F5ACD2DD1E309CA4007F1C8E /* storehouse.plist */,
+			);
+			path = CBRefresh;
+			sourceTree = "<group>";
+		};
+		F5DDA9EA1E2F374F009A9F8A /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				F5ACD2D81E309CA4007F1C8E /* CBRefresh */,
+				F5ACD2DE1E309CA4007F1C8E /* WANGTONGKE.plist */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F5317CEA1E25D60300D8F9AB /* WTKMVVMRxSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5317D131E25D60400D8F9AB /* Build configuration list for PBXNativeTarget "WTKMVVMRxSwift" */;
+			buildPhases = (
+				8E6A105E4E2E7C40DD01E52F /* [CP] Check Pods Manifest.lock */,
+				F5317CE71E25D60300D8F9AB /* Sources */,
+				F5317CE81E25D60300D8F9AB /* Frameworks */,
+				F5317CE91E25D60300D8F9AB /* Resources */,
+				D14D5313E2F708F69E01FD70 /* [CP] Embed Pods Frameworks */,
+				9087762025BE799D9F4E05BB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WTKMVVMRxSwift;
+			productName = WTKMVVMRxSwift;
+			productReference = F5317CEB1E25D60300D8F9AB /* WTKMVVMRxSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F5317CFE1E25D60400D8F9AB /* WTKMVVMRxSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5317D161E25D60400D8F9AB /* Build configuration list for PBXNativeTarget "WTKMVVMRxSwiftTests" */;
+			buildPhases = (
+				F5317CFB1E25D60400D8F9AB /* Sources */,
+				F5317CFC1E25D60400D8F9AB /* Frameworks */,
+				F5317CFD1E25D60400D8F9AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5317D011E25D60400D8F9AB /* PBXTargetDependency */,
+			);
+			name = WTKMVVMRxSwiftTests;
+			productName = WTKMVVMRxSwiftTests;
+			productReference = F5317CFF1E25D60400D8F9AB /* WTKMVVMRxSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F5317D091E25D60400D8F9AB /* WTKMVVMRxSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5317D191E25D60400D8F9AB /* Build configuration list for PBXNativeTarget "WTKMVVMRxSwiftUITests" */;
+			buildPhases = (
+				F5317D061E25D60400D8F9AB /* Sources */,
+				F5317D071E25D60400D8F9AB /* Frameworks */,
+				F5317D081E25D60400D8F9AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5317D0C1E25D60400D8F9AB /* PBXTargetDependency */,
+			);
+			name = WTKMVVMRxSwiftUITests;
+			productName = WTKMVVMRxSwiftUITests;
+			productReference = F5317D0A1E25D60400D8F9AB /* WTKMVVMRxSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5317CE31E25D60300D8F9AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "王同科";
+				TargetAttributes = {
+					F5317CEA1E25D60300D8F9AB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7A692X8NVA;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					F5317CFE1E25D60400D8F9AB = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F5317CEA1E25D60300D8F9AB;
+					};
+					F5317D091E25D60400D8F9AB = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F5317CEA1E25D60300D8F9AB;
+					};
+				};
+			};
+			buildConfigurationList = F5317CE61E25D60300D8F9AB /* Build configuration list for PBXProject "WTKMVVMRxSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F5317CE21E25D60300D8F9AB;
+			productRefGroup = F5317CEC1E25D60300D8F9AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5317CEA1E25D60300D8F9AB /* WTKMVVMRxSwift */,
+				F5317CFE1E25D60400D8F9AB /* WTKMVVMRxSwiftTests */,
+				F5317D091E25D60400D8F9AB /* WTKMVVMRxSwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F5317CE91E25D60300D8F9AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F501D7111E262DCE0042E21F /* Main.storyboard in Resources */,
+				F5ACD2E21E309CA4007F1C8E /* WANGTONGKE.plist in Resources */,
+				F5317CF91E25D60300D8F9AB /* LaunchScreen.storyboard in Resources */,
+				F501D7171E271D5D0042E21F /* Tabbar.plist in Resources */,
+				F50C01D71E31BAA600B03DBA /* WTKHomeCollectionViewCell.xib in Resources */,
+				F5ACD2E11E309CA4007F1C8E /* storehouse.plist in Resources */,
+				F5317CF61E25D60300D8F9AB /* Assets.xcassets in Resources */,
+				F501D7131E2719890042E21F /* launchImage.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5317CFD1E25D60400D8F9AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5317D081E25D60400D8F9AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8E6A105E4E2E7C40DD01E52F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9087762025BE799D9F4E05BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WTKMVVMRxSwift/Pods-WTKMVVMRxSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D14D5313E2F708F69E01FD70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WTKMVVMRxSwift/Pods-WTKMVVMRxSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F5317CE71E25D60300D8F9AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F501D7211E271FCB0042E21F /* WTKHomeVM.swift in Sources */,
+				F501D7271E271FFC0042E21F /* WTKMeVM.swift in Sources */,
+				F5317CF11E25D60300D8F9AB /* ViewController.swift in Sources */,
+				F5317CEF1E25D60300D8F9AB /* AppDelegate.swift in Sources */,
+				F50C01DE1E3210DD00B03DBA /* WTKHomeChoiceView.swift in Sources */,
+				F5ACD2E01E309CA4007F1C8E /* CBStoreHouseRefreshControl.m in Sources */,
+				F5D63B6C1E28A8DE00A92878 /* WTKViewModelNvigationImpl.swift in Sources */,
+				F5D63B631E287FD500A92878 /* WTKBasedCategory.swift in Sources */,
+				F50C01DC1E31EB2A00B03DBA /* WTKURLHeader.swift in Sources */,
+				F501D7081E262B4F0042E21F /* WTKBasedVC.swift in Sources */,
+				F501D70A1E262C4A0042E21F /* WTKBasedVM.swift in Sources */,
+				F501D70E1E262C870042E21F /* WTKNavigationController.swift in Sources */,
+				F5ACD2E41E309E86007F1C8E /* WTKTableViewController.swift in Sources */,
+				F5ACD23C1E2F6F1F007F1C8E /* UIImage+WTK.m in Sources */,
+				F5ACD2E61E309EB5007F1C8E /* WTKTableVM.swift in Sources */,
+				F501D71F1E271FB40042E21F /* WTKMeVC.swift in Sources */,
+				F501D71D1E271FA70042E21F /* WTKCategoryVC.swift in Sources */,
+				F50C01E01E35F5BA00B03DBA /* WTKUser.swift in Sources */,
+				F5ACD2DF1E309CA4007F1C8E /* BarItem.m in Sources */,
+				F50C01D61E31BAA600B03DBA /* WTKHomeCollectionViewCell.swift in Sources */,
+				F501D71B1E271F920042E21F /* WTKProductVC.swift in Sources */,
+				F5DDA9F51E2F4177009A9F8A /* WTKHeader.swift in Sources */,
+				F5D63B651E28A25D00A92878 /* WTKViewModelServices.swift in Sources */,
+				F501D7191E271F3B0042E21F /* WTKHomeVC.swift in Sources */,
+				F501D7251E271FF00042E21F /* WTKCategoryVM.swift in Sources */,
+				F501D70C1E262C6C0042E21F /* WTKTabbarController.swift in Sources */,
+				F5FF286D1E4859C2008E3091 /* WTKBasedModel.swift in Sources */,
+				F50C01DA1E31DCCC00B03DBA /* WTKRequestManager.swift in Sources */,
+				F501D7291E2721C10042E21F /* WTKProductVM.swift in Sources */,
+				F5FF286B1E485952008E3091 /* WTKChannel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5317CFB1E25D60400D8F9AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5317D041E25D60400D8F9AB /* WTKMVVMRxSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5317D061E25D60400D8F9AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5317D0F1E25D60400D8F9AB /* WTKMVVMRxSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F5317D011E25D60400D8F9AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5317CEA1E25D60300D8F9AB /* WTKMVVMRxSwift */;
+			targetProxy = F5317D001E25D60400D8F9AB /* PBXContainerItemProxy */;
+		};
+		F5317D0C1E25D60400D8F9AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5317CEA1E25D60300D8F9AB /* WTKMVVMRxSwift */;
+			targetProxy = F5317D0B1E25D60400D8F9AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F501D70F1E262DCE0042E21F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F501D7101E262DCE0042E21F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F5317CF71E25D60300D8F9AB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5317CF81E25D60300D8F9AB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F5317D111E25D60400D8F9AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					D,
+					"W_DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F5317D121E25D60400D8F9AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5317D141E25D60400D8F9AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44DC6629E05F73D645C90C4A /* Pods-WTKMVVMRxSwift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 7A692X8NVA;
+				INFOPLIST_FILE = WTKMVVMRxSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangtongke.WTKMVVMRxSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WTKMVVMRxSwift/WTKMVVMRxSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F5317D151E25D60400D8F9AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74E274289FA3412834E7CF15 /* Pods-WTKMVVMRxSwift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 7A692X8NVA;
+				INFOPLIST_FILE = WTKMVVMRxSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangtongke.WTKMVVMRxSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WTKMVVMRxSwift/WTKMVVMRxSwift-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F5317D171E25D60400D8F9AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WTKMVVMRxSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangtongke.WTKMVVMRxSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WTKMVVMRxSwift.app/WTKMVVMRxSwift";
+			};
+			name = Debug;
+		};
+		F5317D181E25D60400D8F9AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WTKMVVMRxSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangtongke.WTKMVVMRxSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WTKMVVMRxSwift.app/WTKMVVMRxSwift";
+			};
+			name = Release;
+		};
+		F5317D1A1E25D60400D8F9AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = WTKMVVMRxSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangtongke.WTKMVVMRxSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WTKMVVMRxSwift;
+			};
+			name = Debug;
+		};
+		F5317D1B1E25D60400D8F9AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = WTKMVVMRxSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangtongke.WTKMVVMRxSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WTKMVVMRxSwift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F5317CE61E25D60300D8F9AB /* Build configuration list for PBXProject "WTKMVVMRxSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5317D111E25D60400D8F9AB /* Debug */,
+				F5317D121E25D60400D8F9AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5317D131E25D60400D8F9AB /* Build configuration list for PBXNativeTarget "WTKMVVMRxSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5317D141E25D60400D8F9AB /* Debug */,
+				F5317D151E25D60400D8F9AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5317D161E25D60400D8F9AB /* Build configuration list for PBXNativeTarget "WTKMVVMRxSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5317D171E25D60400D8F9AB /* Debug */,
+				F5317D181E25D60400D8F9AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5317D191E25D60400D8F9AB /* Build configuration list for PBXNativeTarget "WTKMVVMRxSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5317D1A1E25D60400D8F9AB /* Debug */,
+				F5317D1B1E25D60400D8F9AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F5317CE31E25D60300D8F9AB /* Project object */;
+}

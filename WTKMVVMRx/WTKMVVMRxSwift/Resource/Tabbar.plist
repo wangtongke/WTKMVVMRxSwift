@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>单糖</string>
+		<key>normalName</key>
+		<string>TabBar_home_normal</string>
+		<key>selectedName</key>
+		<string>TabBar_home_selected</string>
+		<key>vc</key>
+		<string>WTKHomeVC</string>
+		<key>vm</key>
+		<string>WTKHomeVM</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>单品</string>
+		<key>normalName</key>
+		<string>TabBar_gift_normal</string>
+		<key>selectedName</key>
+		<string>TabBar_gift_selected</string>
+		<key>vc</key>
+		<string>WTKProductVC</string>
+		<key>vm</key>
+		<string>WTKProductVM</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>分类</string>
+		<key>normalName</key>
+		<string>TabBar_category_normal</string>
+		<key>selectedName</key>
+		<string>TabBar_category_selected</string>
+		<key>vc</key>
+		<string>WTKCategoryVC</string>
+		<key>vm</key>
+		<string>WTKCategoryVM</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>我</string>
+		<key>normalName</key>
+		<string>TabBar_me_boy_normal</string>
+		<key>selectedName</key>
+		<string>TabBar_me_boy_selected</string>
+		<key>vc</key>
+		<string>WTKMeVC</string>
+		<key>vm</key>
+		<string>WTKMeVM</string>
+	</dict>
+</array>
+</plist>
