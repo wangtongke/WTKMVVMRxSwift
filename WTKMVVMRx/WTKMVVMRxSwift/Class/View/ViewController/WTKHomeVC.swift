@@ -22,17 +22,19 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
 //        }
 //    }
     //choiceView
-    var choiceView : WTKHomeChoiceView!
+    var choiceView = WTKHomeChoiceView.init(title: [], frame: CGRect.init(x: 0, y: 64, width: kWidth, height: 40))
     var collectionView : UICollectionView!
     var refreshControl : CBStoreHouseRefreshControl!
+    var channelData = NSMutableArray()
+    var currentChannel : WTKChannel!
+    var currentIndex : Int = 0
+    var dataArray = NSMutableDictionary()
     
 //    TODO: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configView()
         
-        let param : NSDictionary = ["gender" : WTKUser.shareInstance.sex == true ? "1" : "2","generation" : WTKUser.shareInstance.generation]
-        
-        print("2")
     }
     
     
@@ -44,20 +46,47 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
         viewModel.basedData.subscribe { [unowned self](event) in
             let x = event.element!
             self.choiceView.data = x as! [WTKChannel]
+            for obj in x {
+                self.channelData.add(obj)
+            }
+            guard let obj = x.firstObject as! WTKChannel! else{
+                return
+            }
+            self.currentChannel = obj
+            self.viewModel.selectedChannelCommand.onNext([0 : obj])
+            self.collectionView.reloadData()
         }.addDisposableTo(myDisposeBag)
-    
+        
+        choiceView.selectedBlock = {
+           [unowned self] (tag,channel) in
+            self.collectionView.scrollToItem(at: IndexPath.init(row: tag, section: 0), at: .left, animated: true)
+            self.currentChannel = channel
+            self.currentIndex = tag
+            self.viewModel.selectedChannelCommand.onNext([tag : channel])
+        }
+        
+        viewModel.putDetaileData
+            .asObservable()
+            .subscribe { [unowned self] (event) in
+                let x = event.element!
+                self.dataArray[self.currentIndex] = x
+                if self.collectionView != nil {
+                    self.collectionView.reloadData()
+                }
+        }.addDisposableTo(myDisposeBag)
         
     }
     
     
 
     
-    override func initView() {
-        super.initView()
+    func configView() {
+        
+        
+        
         self.automaticallyAdjustsScrollViewInsets = false
         
 //        choiceView
-        choiceView = WTKHomeChoiceView.init(title: [], frame: CGRect.init(x: 0, y: 64, width: kWidth, height: 40))
         self.view.addSubview(choiceView)
         
         
@@ -71,6 +100,7 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
         collectionView.dataSource = self
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = UIColor.white
         collectionView.register(UINib.init(nibName: "WTKHomeCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "cell")
         self.view.addSubview(self.collectionView)
 
@@ -78,7 +108,10 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
     
 
     func configCellWithIndexPath(cell : WTKHomeCollectionViewCell, indexPath : IndexPath) {
-        
+        guard let array = self.dataArray[indexPath.row] else {
+            return
+        }
+        cell.updateWithData(data: array as! NSArray)
     }
     
 //    FIXME: collectionViewDelegate
@@ -90,7 +123,12 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6;
+        return self.channelData.count;
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index = Int(scrollView.contentOffset.x / scrollView.frame.width)
+        self.choiceView.updateWithIndex(tag: index)
     }
     
 

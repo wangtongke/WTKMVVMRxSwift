@@ -15,9 +15,9 @@ let kWidth = UIScreen.main.bounds.width
 
 let kHeight = UIScreen.main.bounds.height
 
-let kScallWidth = UIScreen.main.bounds.width / 375.0
+let kScaleWidth = UIScreen.main.bounds.width / 375.0
 
-let kScallHeight = UIScreen.main.bounds.height / 667.0
+let kScaleHeight = UIScreen.main.bounds.height / 667.0
 
 //MARK : VERSION
 let SYSTEM_VERSION = UIDevice.current.systemVersion

@@ -27,6 +27,8 @@ class WTKHomeChoiceView: UIView {
     var scrollView = UIScrollView()
     var bottomLine = UIView()
     var btnArray = NSMutableArray()
+    
+    var pullBtn = UIButton.init(type: UIButtonType.custom)
 
     ///btn点击回调
     var selectedBlock : (Int ,WTKChannel)->() = {
@@ -41,6 +43,10 @@ class WTKHomeChoiceView: UIView {
         data = title
         bottomView()
         initView()
+        
+    }
+    
+    func rigthView() {
         
     }
     
@@ -84,6 +90,12 @@ class WTKHomeChoiceView: UIView {
             }
         }
         
+    }
+    func updateWithIndex(tag: Int){
+        guard let currentBtn = btnArray[tag] as? UIButton else {
+            return
+        }
+        btnClick(sender: currentBtn)
     }
     
     func btnClick(sender : UIButton) {

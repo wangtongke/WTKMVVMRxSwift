@@ -12,3 +12,5 @@ let BASED_URL = "http://api.dantangapp.com/\(WTKUser.shareInstance.sex == true ?
 
 let HomeBasedData = "/channels/preset"
 
+let HomeURL = "/channels/4/items"
+

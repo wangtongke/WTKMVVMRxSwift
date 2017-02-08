@@ -14,9 +14,7 @@ class WTKHomeCollectionViewCell: UICollectionViewCell,UITableViewDelegate,UITabl
     @IBOutlet weak var tableView: UITableView!
     var viewModel : WTKHomeVM!
     
-    var dataArray : NSMutableArray {
-        return NSMutableArray.init()
-    }
+    var dataArray = NSArray()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,12 +24,28 @@ class WTKHomeCollectionViewCell: UICollectionViewCell,UITableViewDelegate,UITabl
     func configView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.register(WTKHomeTableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.backgroundColor = WTKColor(r: 239, g: 239, b: 243, a: 1)
+        tableView.separatorStyle = .none
+        tableView.rowHeight = kWidth / 2.18
+    }
+    
+    func updateWithData(data : NSArray) {
+        self.dataArray = data
+        reloadData()
+    }
+    
+    func reloadData(){
+        self.tableView.reloadData()
     }
     
     
 //    MARK: tableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell.init()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! WTKHomeTableViewCell
+        let model = self.dataArray[indexPath.row] as! WTKHomeModel
+        cell.updateWithModel(model: model)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

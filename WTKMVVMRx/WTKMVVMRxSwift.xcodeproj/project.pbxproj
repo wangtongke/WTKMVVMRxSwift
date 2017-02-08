@@ -48,6 +48,10 @@
 		F5DDA9F51E2F4177009A9F8A /* WTKHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DDA9F41E2F4177009A9F8A /* WTKHeader.swift */; };
 		F5FF286B1E485952008E3091 /* WTKChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FF286A1E485952008E3091 /* WTKChannel.swift */; };
 		F5FF286D1E4859C2008E3091 /* WTKBasedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FF286C1E4859C2008E3091 /* WTKBasedModel.swift */; };
+		F5FF28721E49C89F008E3091 /* WTKHomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FF28711E49C89F008E3091 /* WTKHomeHeaderView.swift */; };
+		F5FF28741E49CF84008E3091 /* WTKHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FF28731E49CF84008E3091 /* WTKHomeModel.swift */; };
+		F5FF28761E4AB7D8008E3091 /* WTKHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FF28751E4AB7D8008E3091 /* WTKHomeTableViewCell.swift */; };
+		F5FF28781E4AE7BB008E3091 /* WTKTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FF28771E4AE7BB008E3091 /* WTKTools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +125,10 @@
 		F5DDA9F41E2F4177009A9F8A /* WTKHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKHeader.swift; sourceTree = "<group>"; };
 		F5FF286A1E485952008E3091 /* WTKChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKChannel.swift; sourceTree = "<group>"; };
 		F5FF286C1E4859C2008E3091 /* WTKBasedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKBasedModel.swift; sourceTree = "<group>"; };
+		F5FF28711E49C89F008E3091 /* WTKHomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKHomeHeaderView.swift; sourceTree = "<group>"; };
+		F5FF28731E49CF84008E3091 /* WTKHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKHomeModel.swift; sourceTree = "<group>"; };
+		F5FF28751E4AB7D8008E3091 /* WTKHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKHomeTableViewCell.swift; sourceTree = "<group>"; };
+		F5FF28771E4AE7BB008E3091 /* WTKTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKTools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +207,7 @@
 			children = (
 				F50C01DF1E35F5BA00B03DBA /* WTKUser.swift */,
 				F5FF286A1E485952008E3091 /* WTKChannel.swift */,
+				F5FF28731E49CF84008E3091 /* WTKHomeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				F50C01D91E31DCCC00B03DBA /* WTKRequestManager.swift */,
+				F5FF28771E4AE7BB008E3091 /* WTKTools.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -286,6 +296,7 @@
 			children = (
 				F50C01D41E31BAA600B03DBA /* WTKHomeCollectionViewCell.swift */,
 				F50C01D51E31BAA600B03DBA /* WTKHomeCollectionViewCell.xib */,
+				F5FF28751E4AB7D8008E3091 /* WTKHomeTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -294,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				F50C01DD1E3210DD00B03DBA /* WTKHomeChoiceView.swift */,
+				F5FF28711E49C89F008E3091 /* WTKHomeHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -585,9 +597,12 @@
 				F5ACD2E61E309EB5007F1C8E /* WTKTableVM.swift in Sources */,
 				F501D71F1E271FB40042E21F /* WTKMeVC.swift in Sources */,
 				F501D71D1E271FA70042E21F /* WTKCategoryVC.swift in Sources */,
+				F5FF28761E4AB7D8008E3091 /* WTKHomeTableViewCell.swift in Sources */,
 				F50C01E01E35F5BA00B03DBA /* WTKUser.swift in Sources */,
 				F5ACD2DF1E309CA4007F1C8E /* BarItem.m in Sources */,
 				F50C01D61E31BAA600B03DBA /* WTKHomeCollectionViewCell.swift in Sources */,
+				F5FF28721E49C89F008E3091 /* WTKHomeHeaderView.swift in Sources */,
+				F5FF28781E4AE7BB008E3091 /* WTKTools.swift in Sources */,
 				F501D71B1E271F920042E21F /* WTKProductVC.swift in Sources */,
 				F5DDA9F51E2F4177009A9F8A /* WTKHeader.swift in Sources */,
 				F5D63B651E28A25D00A92878 /* WTKViewModelServices.swift in Sources */,
@@ -596,6 +611,7 @@
 				F501D70C1E262C6C0042E21F /* WTKTabbarController.swift in Sources */,
 				F5FF286D1E4859C2008E3091 /* WTKBasedModel.swift in Sources */,
 				F50C01DA1E31DCCC00B03DBA /* WTKRequestManager.swift in Sources */,
+				F5FF28741E49CF84008E3091 /* WTKHomeModel.swift in Sources */,
 				F501D7291E2721C10042E21F /* WTKProductVM.swift in Sources */,
 				F5FF286B1E485952008E3091 /* WTKChannel.swift in Sources */,
 			);
@@ -759,9 +775,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wangtongke.WTKMVVMRxSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "WTKMVVMRxSwift/WTKMVVMRxSwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/wangtongke/Desktop/git/WTKMVVMRxSwift/WTKMVVMRx/WTKMVVMRxSwift/WTKMVVMRxSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
 		};
@@ -777,8 +794,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wangtongke.WTKMVVMRxSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "WTKMVVMRxSwift/WTKMVVMRxSwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/wangtongke/Desktop/git/WTKMVVMRxSwift/WTKMVVMRx/WTKMVVMRxSwift/WTKMVVMRxSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;
 		};

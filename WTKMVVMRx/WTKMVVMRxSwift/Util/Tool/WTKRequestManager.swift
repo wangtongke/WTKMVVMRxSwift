@@ -13,7 +13,7 @@ import Alamofire
 
 class WTKRequestManager: NSObject {
 
-    static func postWithURL(url: String, param : NSDictionary) -> Observable<AnyObject> {
+    static func getWithURL(url: String, param : NSDictionary) -> Observable<AnyObject> {
         let urlTmp = "\(BASED_URL)\(url)"
         return Observable.create({ (x) -> Disposable in
 //            x.onNext(["wang":"hehe"])
