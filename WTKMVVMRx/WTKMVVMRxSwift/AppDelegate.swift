@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabbar = WTKTabbarController()
         window?.rootViewController = tabbar
 
+        
         return true
     }
 

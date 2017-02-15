@@ -31,10 +31,15 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
     var dataArray = NSMutableDictionary()
     
 //    TODO: LifeCycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("111111")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
-        
+
     }
     
     
@@ -69,10 +74,19 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
             .asObservable()
             .subscribe { [unowned self] (event) in
                 let x = event.element!
-                self.dataArray[self.currentIndex] = x
+                print(x)
+                guard let array = x["data"] else {
+                    return
+                }
+                self.dataArray[self.currentIndex] = array
                 if self.collectionView != nil {
                     self.collectionView.reloadData()
                 }
+                guard let refreshControl = x["table"] else {
+                    return
+                }
+                (refreshControl as! CBStoreHouseRefreshControl).finishingLoading()
+                
         }.addDisposableTo(myDisposeBag)
         
     }
@@ -112,6 +126,24 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
             return
         }
         cell.updateWithData(data: array as! NSArray)
+        if cell.isInit {
+            cell.refreshComman.subscribe { [unowned self] (event) in
+                //            refresh
+                let x = event.element!
+                self.viewModel.refreshCommand.onNext(["channel" : [self.currentIndex : self.currentChannel], "table" : x])
+                }.addDisposableTo(myDisposeBag)
+            cell.selectedCommand.subscribe({ [unowned self] (event) in
+                let x = event.element!
+                self.viewModel.cellClickCommand.onNext(x)
+//                let viewModel = WTKStrategyDetaileVM.init(services: WTKViewModelNvigationImpl(), params: ["title": "攻略详情" as AnyObject])
+                //            viewModel.model = x
+                //            self.services.pushViewModel(viewModel: viewModel, animated: true)
+//                let vcClass = NSClassFromString("WTKMVVMRxSwift.WTKStrategyDetaileVC") as! WTKBasedVC.Type
+//                let vc = vcClass.init(viewModel: viewModel)
+//                self.navigationController?.pushViewController(vc, animated: true)
+            }).addDisposableTo(myDisposeBag)
+            cell.isInit = false
+        }
     }
     
 //    FIXME: collectionViewDelegate
@@ -119,7 +151,7 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! WTKHomeCollectionViewCell
         cell.viewModel = self.viewModel
         self.configCellWithIndexPath(cell: cell, indexPath: indexPath)
-        
+
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -152,6 +184,7 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*

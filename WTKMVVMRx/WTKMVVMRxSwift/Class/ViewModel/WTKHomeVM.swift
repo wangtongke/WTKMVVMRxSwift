@@ -14,26 +14,28 @@ class WTKHomeVM: WTKBasedVM {
     
     var basedCommand : PublishSubject<AnyObject>!
     
-    var refreshCommand : PublishSubject<[Int : WTKChannel]>!
+    var refreshCommand : PublishSubject<NSDictionary>!
     
     var selectedChannelCommand : PublishSubject<[Int : WTKChannel]>!
+    
+    var cellClickCommand : PublishSubject<WTKHomeModel>!
     
     var basedData : PublishSubject<NSMutableArray>!
     
     ///data
     var dataDic = NSMutableDictionary()
     
-    var putDetaileData : Variable<NSArray>!
+    var putDetaileData : Variable<NSDictionary>!
     
     
-    required init(services service: WTKViewModelServicesType, params param: [String : AnyObject]) {
+    required init(services service: WTKViewModelNvigationImpl, params param: [String : AnyObject]) {
         super.init(services: service, params: param)
         configViewModel()
     }
     
     func configViewModel(){
         let ws = weakSelf(weakSelf: self) as! WTKHomeVM
-        putDetaileData = Variable.init([])
+        putDetaileData = Variable.init([:])
         basedCommand = PublishSubject<AnyObject>()
         basedData = PublishSubject<NSMutableArray>()
         basedCommand.asObservable().subscribe { (event) in
@@ -66,14 +68,14 @@ class WTKHomeVM: WTKBasedVM {
 
         basedCommand.onNext(1 as AnyObject)
         
-        self.refreshCommand = PublishSubject<[Int : WTKChannel]>()
+        self.refreshCommand = PublishSubject<NSDictionary>()
         
         self.refreshCommand.subscribe { [unowned self](event) in
             let xr = event.element!
-            
+            let channelDic = xr["channel"] as! [Int : WTKChannel]
 //            gender=1&generation=1&limit=20&offset=0
             let param = ["gender" : WTKUser.shareInstance.sex == true ? 1 : 2, "generation" : WTKUser.shareInstance.generation,"limit" : 20, "offset" : 0] as NSDictionary
-            let url = "/channels/\(xr.values.first!.id!)/items"
+            let url = "/channels/\(channelDic.values.first!.id!)/items"
             WTKRequestManager.getWithURL(url: url, param: param).subscribe({ (e) in
                 let x = e.element as! NSDictionary
                 if x["code"] as! Int == 200
@@ -82,12 +84,18 @@ class WTKHomeVM: WTKBasedVM {
                     let mArray = NSMutableArray()
                     for dic in array
                     {
-                        wPrint(message: dic)
+//                        wPrint(message: dic)
                         let model = WTKHomeModel.init(aDic: dic as! NSDictionary)
                         mArray.add(model)
                     }
-                    self.dataDic[xr.keys.first] = mArray
-                    ws.putDetaileData.value = mArray
+                    self.dataDic[channelDic.keys.first] = mArray
+                    guard let table = xr["table"] else {
+                        ws.putDetaileData.value = ["data" : mArray ]
+                        return
+                    }
+                    ws.putDetaileData.value = ["data" : mArray, "table": table]
+                    
+                    print("------")
                 }
             }).addDisposableTo(self.myDisposeBag)
             
@@ -101,14 +109,25 @@ class WTKHomeVM: WTKBasedVM {
                 //                无此数据执行刷新
                 wPrint(message: x.keys.first!)
                 wPrint(message: self.dataDic)
-                self.refreshCommand.onNext(x)
+                self.refreshCommand.onNext(["channel" : x])
             } else {
-                self.putDetaileData.value = data as! NSArray
+                self.putDetaileData.value = ["data" : data]
             }
-
             
         }.addDisposableTo(myDisposeBag)
         
+        cellClickCommand = PublishSubject<WTKHomeModel>()
+        cellClickCommand.subscribe { [unowned self] (event) in
+            let x = event.element!
+            print(self.services)
+            let viewModel = WTKStrategyDetaileVM.init(services: WTKViewModelNvigationImpl(), params: ["title": "攻略详情" as AnyObject])
+            viewModel.model = x
+            self.services.pushViewModel(viewModel: viewModel, animated: true)
+//            let vcClass = NSClassFromString("WTKMVVMRxSwift.WTKStrategyDetaileVC") as! WTKBasedVC.Type
+//            let vc = vcClass.init(viewModel: viewModel)
+
+            
+        }.addDisposableTo(myDisposeBag)
     }
 }
 

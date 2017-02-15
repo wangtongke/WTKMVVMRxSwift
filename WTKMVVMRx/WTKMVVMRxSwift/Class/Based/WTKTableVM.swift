@@ -13,7 +13,7 @@ class WTKTableVM: WTKBasedVM {
     
     
     
-    required init(services service: WTKViewModelServicesType, params param: [String : AnyObject]) {
+    required init(services service: WTKViewModelNvigationImpl, params param: [String : AnyObject]) {
         super.init(services: service, params: param)
         do {
             try self.shouldReresh = param[kIsRefresh] as! Bool

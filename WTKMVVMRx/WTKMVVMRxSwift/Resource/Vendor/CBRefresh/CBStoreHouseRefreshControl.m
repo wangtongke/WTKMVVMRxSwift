@@ -42,6 +42,11 @@ NSString *const yKey = @"y";
 @property (nonatomic) int horizontalRandomness;
 @property (nonatomic) BOOL reverseLoadingAnimation;
 
+
+@property(nonatomic,assign)BOOL isFirst;
+///赋值次数
+@property(nonatomic,assign)int time;
+
 @end
 
 @implementation CBStoreHouseRefreshControl
@@ -84,7 +89,9 @@ NSString *const yKey = @"y";
     refreshControl.action = refreshAction;
     refreshControl.reverseLoadingAnimation = reverseLoadingAnimation;
     refreshControl.internalAnimationFactor = internalAnimationFactor;
-    refreshControl.originalTopContentInset = -10086;
+//    refreshControl.originalTopContentInset = -10086;
+    refreshControl.isFirst = YES;
+    refreshControl.time = 0;
     [scrollView addSubview:refreshControl];
     
     // Calculate frame according to points max width and height
@@ -103,7 +110,7 @@ NSString *const yKey = @"y";
         if (startPoint.y > height) height = startPoint.y;
         if (endPoint.y > height) height = endPoint.y;
     }
-    refreshControl.frame = CGRectMake(0, 0, width, height);
+    refreshControl.frame = CGRectMake(0, -10, width, height);
 
     // Create bar items
     NSMutableArray *mutableBarItems = [[NSMutableArray alloc] init];
@@ -111,7 +118,7 @@ NSString *const yKey = @"y";
         
         CGPoint startPoint = CGPointFromString(startPoints[i]);
         CGPoint endPoint = CGPointFromString(endPoints[i]);
-
+        CGRect wFrame = CGRectMake(0, 0, refreshControl.frame.size.width, refreshControl.frame.size.height);
         BarItem *barItem = [[BarItem alloc] initWithFrame:refreshControl.frame startPoint:startPoint endPoint:endPoint color:color lineWidth:lineWidth];
         barItem.tag = i;
         barItem.backgroundColor=[UIColor clearColor];
@@ -123,7 +130,7 @@ NSString *const yKey = @"y";
     }
     
     refreshControl.barItems = [NSArray arrayWithArray:mutableBarItems];
-    refreshControl.frame = CGRectMake(0, 0, width, height);
+    refreshControl.frame = CGRectMake(0, -10, width, height);
     refreshControl.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2, 0);
     for (BarItem *barItem in refreshControl.barItems) {
         [barItem setupWithFrame:refreshControl.frame];
@@ -137,7 +144,11 @@ NSString *const yKey = @"y";
 
 - (void)scrollViewDidScroll
 {
-    if (self.originalTopContentInset == -10086 || self.originalTopContentInset == 0) self.originalTopContentInset = self.scrollView.contentInset.top;
+    if (self.originalTopContentInset == 0 && self.time < 2) {
+        NSLog(@"%.2f",self.scrollView.contentInset.top);
+        self.time++;
+        self.originalTopContentInset = self.scrollView.contentInset.top;
+    }
     
     self.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2, self.realContentOffsetY*krelativeHeightFactor);
     if (self.state == CBStoreHouseRefreshControlStateIdle)

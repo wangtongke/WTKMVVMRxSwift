@@ -15,8 +15,10 @@ class WTKNavigationController: UINavigationController {
 
         self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationBar.setBackgroundImage(UIImage.init(from: WTKColor(r: 231, g: 83, b: 84, a: 0.95)), for: .default)
+        self.navigationBar.tintColor = UIColor.white;
         
-        
+//        self.delegate = WTKTransition.shareManager()
+//        WTKTransition.shareManager().animationType = WTKAnimateType.round
     }
 
     

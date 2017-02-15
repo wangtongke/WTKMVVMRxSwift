@@ -23,9 +23,10 @@ class WTKBasedVC: UIViewController {
     var myDisposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         initView()
         bindToViewModel()
-        
+//        self.vm.services.vc = self.navigationController
     }
     
     required init(viewModel vm : WTKBasedVM){
@@ -37,17 +38,18 @@ class WTKBasedVC: UIViewController {
 //    MARK: BIND
     func bindToViewModel(){
 
-        self.rx.observe(String.self, "vm.title").subscribe { (event) in
+        self.rx.observe(String.self, "vm.title").subscribe { [unowned self] (event) in
             let x = event.element
             self.navigationItem.title = x!
-        }.addDisposableTo(myDisposeBag)
+        }.addDisposableTo(DisposeBag())
     }
     
 //    MARK: initView
     func initView(){
         self.view.backgroundColor = BACK_COLOR
         if self.navigationController != nil && self != self.navigationController?.viewControllers.first {
-            resetNavi()
+//            resetNavi()
+            
         }
     }
     
@@ -68,12 +70,19 @@ class WTKBasedVC: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    deinit {
+        wPrint(message: "\(NSStringFromClass(self.classForCoder))释放")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+//    deinit {
+//        print(NSStringFromClass(self.classForCoder))
+//    }
 
     /*
     // MARK: - Navigation

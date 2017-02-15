@@ -80,7 +80,7 @@ class WTKHomeTableViewCell: UITableViewCell {
         }
         
         self.addSubview(titleLabel)
-        titleLabel.font = wSystemFont(size: 22)
+        titleLabel.font = wSystemFont(size: 18)
         titleLabel.textColor = UIColor.white
         titleLabel.textAlignment = .left
         titleLabel.snp.makeConstraints { [unowned self] (make) in
