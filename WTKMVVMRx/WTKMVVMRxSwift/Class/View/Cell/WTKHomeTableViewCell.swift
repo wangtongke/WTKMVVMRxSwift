@@ -48,10 +48,12 @@ class WTKHomeTableViewCell: UITableViewCell {
         }
         starTitleLabel.text = model.likes_count
         if model.liked == "0" {
-            starImageView.image = UIImage.init(named: "w_heart1N")
+            starImageView.image = UIImage.init(named: "w_star2N")
+//            WTKTools.changeImageWithImgView(imgView: starImageView, name: "w_star2N")
             starBgView.isSelected = false
         } else {
-            starImageView.image = UIImage.init(named: "w_heart1")
+            starImageView.image = UIImage.init(named: "w_star2")
+//            WTKTools.changeImageWithImgView(imgView: starImageView, name: "w_star2")
             starBgView.isSelected = true
         }
         
@@ -60,10 +62,12 @@ class WTKHomeTableViewCell: UITableViewCell {
     func starBtnClick(sender : UIButton) {
         sender.isSelected = !sender.isSelected
         if sender.isSelected == true {
-            starImageView.image = UIImage.init(named: "w_heart1")
+            starImageView.image = UIImage.init(named: "w_star2")
+//            WTKTools.changImageOfLayout(imgView: starImageView, name: "w_star2")
             self.model.liked = "1"
         } else {
-            starImageView.image = UIImage.init(named: "w_heart1N")
+            starImageView.image = UIImage.init(named: "w_star2N")
+//            WTKTools.changImageOfLayout(imgView: starImageView, name: "w_star2N")
             self.model.liked = "0"
         }
         
@@ -103,7 +107,7 @@ class WTKHomeTableViewCell: UITableViewCell {
             make.height.equalTo(30 * kScaleWidth)
         }
         
-        starImageView.image = UIImage.init(named: "w_heart1N")
+        starImageView.image = UIImage.init(named: "w_star1N")
         starBgView.addSubview(starImageView)
         starImageView.snp.makeConstraints { [unowned self] (make) in
             make.left.equalTo(self.starBgView).offset(5)

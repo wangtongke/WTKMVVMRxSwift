@@ -7,14 +7,31 @@
 //
 
 import UIKit
-
+import RxSwift
+import RxCocoa
 class WTKStrategyDetaileVM: WTKBasedVM {
     
     var model : WTKHomeModel!
 
+    var starCommand : PublishSubject<UIButton>!
     
+    var shareCommand : PublishSubject<UIButton>!
+    
+    required init(services service: WTKViewModelNvigationImpl, params param: [String : AnyObject]) {
+        super.init(services: service, params: param)
+        configViewModel()
+    }
     
     func configViewModel() {
+        starCommand = PublishSubject<UIButton>()
+        shareCommand = PublishSubject<UIButton>()
         
+        starCommand.subscribe { (event) in
+            
+        }.addDisposableTo(myDisposeBag)
+        
+        shareCommand.subscribe { (event) in
+//            分享
+        }.addDisposableTo(myDisposeBag)
     }
 }

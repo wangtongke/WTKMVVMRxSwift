@@ -8,6 +8,8 @@
 
 import UIKit
 import WebKit
+import RxCocoa
+import RxSwift
 /**
  * 攻略详情
  */
@@ -65,6 +67,22 @@ class WTKStrategyDetaileVC: WTKBasedVC,WKNavigationDelegate,WKUIDelegate,UIScrol
         starBtn.setTitle(self.viewModel.model.likes_count, for: .normal)
         shareBtn.setTitle(self.viewModel.model.id, for: .normal)
         commentBtn.setTitle("12", for: .normal)
+        
+        starBtn.rx.tap.subscribe({ [unowned self] (event) in
+            self.starBtn.isSelected = !self.starBtn.isSelected
+            if self.starBtn.isSelected {
+                self.starBtn.setTitle("\(Int(self.viewModel.model.likes_count!)! + 1)", for: .normal)
+                WTKTools.changeImageWithImgView(imgView: self.starImg, name: "w_star1")
+            } else {
+                self.starBtn.setTitle(self.viewModel.model.likes_count, for: .normal)
+                WTKTools.changeImageWithImgView(imgView: self.starImg, name: "w_star1N")
+            }
+            self.viewModel.starCommand.onNext(self.starBtn)
+        }).addDisposableTo(myDisposeBag)
+        
+        shareBtn.rx.tap.subscribe({(event) in
+            
+        }).addDisposableTo(myDisposeBag)
     }
     
     func configView() {
@@ -73,6 +91,7 @@ class WTKStrategyDetaileVC: WTKBasedVC,WKNavigationDelegate,WKUIDelegate,UIScrol
         webView.navigationDelegate = self
         webView.uiDelegate = self
         webView.scrollView.delegate = self
+        webView.scrollView.contentInset = UIEdgeInsets.init(top: kWidth / 2.18 , left: 0, bottom: 0, right: 0)
         self.view.addSubview(webView)
         
         progressView.frame = CGRect.init(x: 0, y: 64, width: kWidth, height: 1.5)
@@ -182,7 +201,7 @@ class WTKStrategyDetaileVC: WTKBasedVC,WKNavigationDelegate,WKUIDelegate,UIScrol
             self.progressView.setProgress(Float(self.webView.estimatedProgress), animated: true)
             if self.webView.estimatedProgress >= 1.0 {
                 self.progressView.alpha = 0
-                webView.scrollView.contentInset = UIEdgeInsets.init(top: kWidth / 2.18 + 64, left: 0, bottom: 0, right: 0)
+                
 //                webView.removeObserver(self, forKeyPath: progressPath)
 //                webView.removeObserver(self, forKeyPath: titlePath)
             }

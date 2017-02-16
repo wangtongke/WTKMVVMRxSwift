@@ -19,4 +19,76 @@ class WTKTools: NSObject {
         
         return rect.width
     }
+    /**
+     * 更换ImageView图片
+     * param ： imgView   UIImageView
+     * param : name     图片名
+     */
+    static func changeImageWithImgView(imgView : UIImageView, name: String) {
+        let size = imgView.frame.size
+        UIView.animate(withDuration: 0.1, animations: {
+            imgView.bounds = CGRect.init(x: 0, y: 0, width: size.width / 3.0 , height: size.height / 3.0)
+        }) { (x) in
+            imgView.image = UIImage.init(named: name)
+            UIView.animate(withDuration: 0.35,
+                           delay: 0,
+                           usingSpringWithDamping: 0.4,
+                           initialSpringVelocity: 0.1,
+                           options: .curveLinear,
+                           animations: {
+                imgView.bounds = CGRect.init(x: 0, y: 0, width: size.width, height: size.height)
+            },
+                           completion: { (x) in
+                
+            })
+            
+            
+            
+            
+//            usingSpringWithDamping:1.0
+//            initialSpringVelocity:0.1
+//            options:UIViewAnimationOptionCurveLinear
+        }
+    }
+    
+    static func changImageOfLayout(imgView : UIImageView, name : String) {
+        let size = imgView.frame.size
+        UIView.animate(withDuration: 0.2, animations: {
+            imgView.snp.updateConstraints({ (make) in
+                make.size.equalTo(CGSize.init(width: size.width / 2.0, height: size.height / 2.0))
+            })
+        }) { (x) in
+            imgView.image = UIImage.init(named: name)
+//            UIView.animate(withDuration: 0.35,
+//                           delay: 0,
+//                           usingSpringWithDamping: 0.4,
+//                           initialSpringVelocity: 0.1,
+//                           options: .curveLinear,
+//                           animations: {
+//                            
+//            },
+//                           completion: { (x) in
+//                            
+//            })
+    }
+    }
+    
+    /**
+     * 分享
+     */
+    static func shared() {
+        
+    }
+    
 }
+
+
+extension UIImageView {
+    
+}
+
+
+
+
+
+

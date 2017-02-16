@@ -13,7 +13,13 @@ class WTKMeVC: WTKBasedVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        let start = CFAbsoluteTimeGetCurrent()
+        var sum=0
+        for i in 0...10000000{
+            sum+=i
+        }
+        print(sum)
+        print(String(CFAbsoluteTimeGetCurrent()-start)+" seconds")
     }
 
     override func didReceiveMemoryWarning() {
