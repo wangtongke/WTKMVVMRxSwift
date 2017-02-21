@@ -44,9 +44,15 @@ class WTKStrategyDetaileVM: WTKBasedVM {
 //                    param.ssdkSetupQQParams(byText: "分享", title: "分享", url: URL.init(string: "http://www.jianshu.com/u/f3e780fd1a4e"), audioFlash: nil, videoFlash: nil, thumbImage: "http://img.51xiaoniu.cn/product/main_assets/assets/573e/6d28/206a/af4e/87f2/b739/573dc0e1af48433144e07ae5.jpg@!thumb", images: ["http://img.51xiaoniu.cn/product/main_assets/assets/573e/6d28/206a/af4e/87f2/b739/573dc0e1af48433144e07ae5.jpg@!avatar"], type: SSDKContentType.image, forPlatformSubType: SSDKPlatformType.subTypeQQFriend)
 //                    param.ssdkSetupQQParams(byText: "222", title: "111", url: URL.init(string: "http://www.jianshu.com/u/f3e780fd1a4e"), thumbImage: "http://img.51xiaoniu.cn/product/main_assets/assets/573e/6d28/206a/af4e/87f2/b739/573dc0e1af48433144e07ae5.jpg@!thumb", image: "http://img.51xiaoniu.cn/product/main_assets/assets/573e/6d28/206a/af4e/87f2/b739/573dc0e1af48433144e07ae5.jpg@!avatar", type: SSDKContentType.image, forPlatformSubType: SSDKPlatformType.subTypeQQFriend)
                     
-                    param.ssdkSetupQQParams(byText: "fffff", title: "aaaaa", url: URL.init(string: "http://www.jianshu.com/u/f3e780fd1a4e"), thumbImage: "http://img.51xiaoniu.cn/product/main_assets/assets/573e/6d28/206a/af4e/87f2/b739/573dc0e1af48433144e07ae5.jpg@!thumb", image: "http://img.51xiaoniu.cn/product/main_assets/assets/573e/6d28/206a/af4e/87f2/b739/573dc0e1af48433144e07ae5.jpg@!avatar", type: SSDKContentType.auto, forPlatformSubType: SSDKPlatformType.subTypeQQFriend)
+                    param.ssdkSetupQQParams(byText: "这是一个分享", title: "分享", url: URL.init(string: "http://www.jianshu.com/u/f3e780fd1a4e"), thumbImage: "http://img.51xiaoniu.cn/product/main_assets/assets/573e/6d28/206a/af4e/87f2/b739/573dc0e1af48433144e07ae5.jpg@!thumb", image: "http://img.51xiaoniu.cn/product/main_assets/assets/573e/6d28/206a/af4e/87f2/b739/573dc0e1af48433144e07ae5.jpg@!avatar", type: SSDKContentType.auto, forPlatformSubType: SSDKPlatformType.subTypeQQFriend)
                     
                     ShareSDK.share(SSDKPlatformType.subTypeQQFriend, parameters: param, onStateChanged: { (state, x, entity, error) in
+                        print(error)
+                    })
+                    break
+                case 101 :
+                    param.ssdkSetupWeChatParams(byText: "这是一个分享", title: "分享", url:URL.init(string: "http://www.jianshu.com/u/f3e780fd1a4e") , thumbImage: "http://img.51xiaoniu.cn/product/main_assets/assets/573e/6d28/206a/af4e/87f2/b739/573dc0e1af48433144e07ae5.jpg@!thumb", image: "http://img.51xiaoniu.cn/product/main_assets/assets/573e/6d28/206a/af4e/87f2/b739/573dc0e1af48433144e07ae5.jpg@!avatar", musicFileURL: nil, extInfo: nil, fileData: nil, emoticonData: nil, type: SSDKContentType.auto, forPlatformSubType: SSDKPlatformType.subTypeWechatSession)
+                    ShareSDK.share(SSDKPlatformType.subTypeWechatSession, parameters: param, onStateChanged: { (x, y, z, error) in
                         print(error)
                     })
                     break

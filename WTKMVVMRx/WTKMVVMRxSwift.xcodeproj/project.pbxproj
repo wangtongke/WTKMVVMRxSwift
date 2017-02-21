@@ -38,7 +38,7 @@
 		F563AC091E4DA11B0044659E /* WTKRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563AC081E4DA11B0044659E /* WTKRouter.swift */; };
 		F563AC131E4DA8620044659E /* WTKWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563AC121E4DA8620044659E /* WTKWebVC.swift */; };
 		F563AC151E4DA8780044659E /* WTKWebVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563AC141E4DA8770044659E /* WTKWebVM.swift */; };
-		F57823091E52F27B00367CE7 /* w_LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F57823081E52F27B00367CE7 /* w_LaunchImage.png */; };
+		F57823091E52F27B00367CE7 /* w_FirstImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F57823081E52F27B00367CE7 /* w_FirstImage.png */; };
 		F5ACD23C1E2F6F1F007F1C8E /* UIImage+WTK.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ACD23B1E2F6F1F007F1C8E /* UIImage+WTK.m */; };
 		F5ACD2DF1E309CA4007F1C8E /* BarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ACD2DA1E309CA4007F1C8E /* BarItem.m */; };
 		F5ACD2E01E309CA4007F1C8E /* CBStoreHouseRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ACD2DC1E309CA4007F1C8E /* CBStoreHouseRefreshControl.m */; };
@@ -72,6 +72,12 @@
 		F5B865111E5A8BD3000D91EF /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B864FF1E5A8BD3000D91EF /* MOBFoundation.framework */; };
 		F5B865121E5A8BD3000D91EF /* ShareSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5B865001E5A8BD3000D91EF /* ShareSDK.bundle */; };
 		F5B865131E5A8BD3000D91EF /* ShareSDKConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B865011E5A8BD3000D91EF /* ShareSDKConnector.framework */; };
+		F5B865151E5BE12A000D91EF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B865141E5BE12A000D91EF /* Security.framework */; };
+		F5B865171E5BE134000D91EF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B865161E5BE134000D91EF /* SystemConfiguration.framework */; };
+		F5B865191E5BE14B000D91EF /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B865181E5BE14B000D91EF /* libsqlite3.0.tbd */; };
+		F5B8651B1E5BE157000D91EF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B8651A1E5BE157000D91EF /* libc++.tbd */; };
+		F5B8651D1E5BE162000D91EF /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B8651C1E5BE162000D91EF /* CoreTelephony.framework */; };
+		F5B8651F1E5BE168000D91EF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B8651E1E5BE168000D91EF /* CFNetwork.framework */; };
 		F5D63B631E287FD500A92878 /* WTKBasedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D63B621E287FD500A92878 /* WTKBasedCategory.swift */; };
 		F5D63B651E28A25D00A92878 /* WTKViewModelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D63B641E28A25D00A92878 /* WTKViewModelServices.swift */; };
 		F5D63B6C1E28A8DE00A92878 /* WTKViewModelNvigationImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D63B6B1E28A8DE00A92878 /* WTKViewModelNvigationImpl.swift */; };
@@ -145,7 +151,7 @@
 		F563AC081E4DA11B0044659E /* WTKRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKRouter.swift; sourceTree = "<group>"; };
 		F563AC121E4DA8620044659E /* WTKWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKWebVC.swift; sourceTree = "<group>"; };
 		F563AC141E4DA8770044659E /* WTKWebVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKWebVM.swift; sourceTree = "<group>"; };
-		F57823081E52F27B00367CE7 /* w_LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = w_LaunchImage.png; path = Assets.xcassets/LaunchImage.launchimage/w_LaunchImage.png; sourceTree = "<group>"; };
+		F57823081E52F27B00367CE7 /* w_FirstImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = w_FirstImage.png; path = Assets.xcassets/LaunchImage.launchimage/w_FirstImage.png; sourceTree = "<group>"; };
 		F5ACD23A1E2F6F1F007F1C8E /* UIImage+WTK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WTK.h"; sourceTree = "<group>"; };
 		F5ACD23B1E2F6F1F007F1C8E /* UIImage+WTK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WTK.m"; sourceTree = "<group>"; };
 		F5ACD2D91E309CA4007F1C8E /* BarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarItem.h; sourceTree = "<group>"; };
@@ -185,6 +191,12 @@
 		F5B864FF1E5A8BD3000D91EF /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
 		F5B865001E5A8BD3000D91EF /* ShareSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDK.bundle; sourceTree = "<group>"; };
 		F5B865011E5A8BD3000D91EF /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConnector.framework; sourceTree = "<group>"; };
+		F5B865141E5BE12A000D91EF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F5B865161E5BE134000D91EF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F5B865181E5BE14B000D91EF /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		F5B8651A1E5BE157000D91EF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		F5B8651C1E5BE162000D91EF /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F5B8651E1E5BE168000D91EF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F5D63B621E287FD500A92878 /* WTKBasedCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKBasedCategory.swift; sourceTree = "<group>"; };
 		F5D63B641E28A25D00A92878 /* WTKViewModelServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKViewModelServices.swift; sourceTree = "<group>"; };
 		F5D63B6B1E28A8DE00A92878 /* WTKViewModelNvigationImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKViewModelNvigationImpl.swift; sourceTree = "<group>"; };
@@ -206,6 +218,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B8651F1E5BE168000D91EF /* CFNetwork.framework in Frameworks */,
+				F5B8651D1E5BE162000D91EF /* CoreTelephony.framework in Frameworks */,
+				F5B8651B1E5BE157000D91EF /* libc++.tbd in Frameworks */,
+				F5B865191E5BE14B000D91EF /* libsqlite3.0.tbd in Frameworks */,
+				F5B864D81E5696C3000D91EF /* libz.tbd in Frameworks */,
+				F5B865171E5BE134000D91EF /* SystemConfiguration.framework in Frameworks */,
+				F5B865151E5BE12A000D91EF /* Security.framework in Frameworks */,
 				F5B864E21E569702000D91EF /* MessageUI.framework in Frameworks */,
 				F5B864E01E5696EA000D91EF /* libsqlite3.tbd in Frameworks */,
 				F5B8650E1E5A8BD3000D91EF /* libWeChatSDK.a in Frameworks */,
@@ -218,7 +237,6 @@
 				F5B8650C1E5A8BD3000D91EF /* TencentOpenAPI.framework in Frameworks */,
 				F5B864DA1E5696CE000D91EF /* libstdc++.tbd in Frameworks */,
 				F5B865041E5A8BD3000D91EF /* ShareSDKConfigFile.framework in Frameworks */,
-				F5B864D81E5696C3000D91EF /* libz.tbd in Frameworks */,
 				F5B865071E5A8BD3000D91EF /* ShareSDKUI.framework in Frameworks */,
 				F5B865021E5A8BD3000D91EF /* ShareSDK.framework in Frameworks */,
 				F5B865111E5A8BD3000D91EF /* MOBFoundation.framework in Frameworks */,
@@ -249,6 +267,12 @@
 		03D59C3C712E9040C23720EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F5B8651E1E5BE168000D91EF /* CFNetwork.framework */,
+				F5B8651C1E5BE162000D91EF /* CoreTelephony.framework */,
+				F5B8651A1E5BE157000D91EF /* libc++.tbd */,
+				F5B865181E5BE14B000D91EF /* libsqlite3.0.tbd */,
+				F5B865161E5BE134000D91EF /* SystemConfiguration.framework */,
+				F5B865141E5BE12A000D91EF /* Security.framework */,
 				F5B864E11E569702000D91EF /* MessageUI.framework */,
 				F5B864DF1E5696EA000D91EF /* libsqlite3.tbd */,
 				F5B864DD1E5696E1000D91EF /* ImageIO.framework */,
@@ -447,7 +471,7 @@
 				F5317CF51E25D60300D8F9AB /* Assets.xcassets */,
 				F501D70F1E262DCE0042E21F /* Main.storyboard */,
 				F5317CF71E25D60300D8F9AB /* LaunchScreen.storyboard */,
-				F57823081E52F27B00367CE7 /* w_LaunchImage.png */,
+				F57823081E52F27B00367CE7 /* w_FirstImage.png */,
 				F5317CFA1E25D60300D8F9AB /* Info.plist */,
 				F5317D1C1E25E4C300D8F9AB /* WTKMVVMRxSwift-Bridging-Header.h */,
 			);
@@ -704,7 +728,7 @@
 				F5B865061E5A8BD3000D91EF /* ShareSDKUI.bundle in Resources */,
 				F5B865031E5A8BD3000D91EF /* ShareSDKConfigFile.bundle in Resources */,
 				F5B865101E5A8BD3000D91EF /* README.txt in Resources */,
-				F57823091E52F27B00367CE7 /* w_LaunchImage.png in Resources */,
+				F57823091E52F27B00367CE7 /* w_FirstImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

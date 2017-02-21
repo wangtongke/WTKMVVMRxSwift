@@ -30,10 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DispatchQueue.global().async {
             ShareSDK.registerApp("1b7155c23c5d4", activePlatforms: [SSDKPlatformType.subTypeQQFriend.rawValue,SSDKPlatformType.subTypeQZone.rawValue,SSDKPlatformType.typeWechat.rawValue,SSDKPlatformType.subTypeWechatTimeline.rawValue], onImport: { (x) in
                 switch x {
-                case .subTypeQQFriend:
-                    ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
-                    break
-                case .subTypeQZone:
+//                case .subTypeQQFriend:
+//                    ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
+//                    break
+//                case .subTypeQZone:
+//                    ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
+//                    break
+                case .typeQQ:
                     ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
                     break
                 case SSDKPlatformType.typeWechat:
@@ -49,16 +52,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }, onConfiguration: { (platform : SSDKPlatformType, appInfo : NSMutableDictionary?) in
                 switch platform {
                 case .typeWechat:
-                    appInfo?.ssdkSetupWeChat(byAppId: "wx99edba10fa9ee81d", appSecret: "083faf098658c1633756cd3dbef84a72")
+                    appInfo?.ssdkSetupWeChat(byAppId: "wx75e61fb94ed8a102", appSecret: "683b9e519155bdd56348238508461ecf")
                     break
                 case .subTypeWechatTimeline:
-                    appInfo?.ssdkSetupWeChat(byAppId: "wx99edba10fa9ee81d", appSecret: "083faf098658c1633756cd3dbef84a72")
+                    appInfo?.ssdkSetupWeChat(byAppId: "wx75e61fb94ed8a102", appSecret: "683b9e519155bdd56348238508461ecf")
                     break
-                case .subTypeQQFriend:
-                    appInfo?.ssdkSetupQQ(byAppId: "1105742566", appKey: "Jzj1vRwc8GNe4m36", authType: SSDKAuthTypeBoth)
-                    break
-                case .subTypeQZone:
-                    appInfo?.ssdkSetupQQ(byAppId: "1105742566", appKey: "Jzj1vRwc8GNe4m36", authType: SSDKAuthTypeBoth)
+                case .typeQQ:
+                    appInfo?.ssdkSetupQQ(byAppId: "1105999338", appKey: "2jamh8NgkQSg1hux", authType: SSDKAuthTypeBoth)
+
                     break
                 default :
                     break

@@ -39,7 +39,7 @@ class WTKShareBtn: UIButton {
             self.w_label = UILabel.init()
             self.w_label?.textAlignment = .center
             self.w_label?.textColor = WORD_COLOR
-            self.w_label?.font = wSystemFont(size: 14)
+            self.w_label?.font = wSystemFont(size: 13)
             self.addSubview(self.w_label!)
             self.w_label?.snp.makeConstraints({ [unowned self] (make) in
                 make.top.equalTo((self.w_imageView?.snp.bottom)!).offset(5)
