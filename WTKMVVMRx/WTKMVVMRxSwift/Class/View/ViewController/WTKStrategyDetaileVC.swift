@@ -80,9 +80,10 @@ class WTKStrategyDetaileVC: WTKBasedVC,WKNavigationDelegate,WKUIDelegate,UIScrol
             self.viewModel.starCommand.onNext(self.starBtn)
         }).addDisposableTo(myDisposeBag)
         
-        shareBtn.rx.tap.subscribe({(event) in
-            
+        shareBtn.rx.tap.subscribe({ [unowned self] (event) in
+            self.viewModel.shareCommand.onNext(self.shareBtn)
         }).addDisposableTo(myDisposeBag)
+        
     }
     
     func configView() {

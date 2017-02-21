@@ -15,4 +15,10 @@
 #import "WTKTransition.h"
 #import "ZHBScreen.h"
 #import "MJRefresh.h"
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKConnector/ShareSDKConnector.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+#import "WXApi.h"
+
 
