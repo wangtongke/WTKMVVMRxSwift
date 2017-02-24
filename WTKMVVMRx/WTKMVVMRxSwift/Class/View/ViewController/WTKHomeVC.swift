@@ -29,7 +29,7 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
 //    TODO: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("1")
         let param : NSDictionary = ["gender" : WTKUser.shareInstance.sex == true ? "1" : "2","generation" : WTKUser.shareInstance.generation]
         
         print("2")
