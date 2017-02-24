@@ -9,11 +9,24 @@
 import UIKit
 
 class WTKViewModelNvigationImpl: NSObject,WTKViewModelServicesType {
-    func pushViewModel(viewModel: WTKBasedVM, animated: Bool) {}
+    weak var vc : UINavigationController?
+
+    func pushViewModel(viewModel: WTKBasedVM, animated: Bool) {
+        let vc = WTKRouter.shareInstance.viewControllerOfViewModel(viewModel: viewModel)
+//        print(self.vc)
+        self.vc?.pushViewController(vc, animated: animated)
+        
+        
+    }
     
-    func popViewModelWithAnimated(animated: Bool) {}
+    func popViewModelWithAnimated(animated: Bool) {
+       _ = vc?.popViewController(animated: animated)
+        
+    }
     
-    func popToRootViewModelWithAniamted(animated: Bool) {}
+    func popToRootViewModelWithAniamted(animated: Bool) {
+       _ = vc?.popToRootViewController(animated: animated)
+    }
     
     func presentViewModel(viewModel: WTKBasedVM, animated flag: Bool, complete page: (() -> Void)) {}
     

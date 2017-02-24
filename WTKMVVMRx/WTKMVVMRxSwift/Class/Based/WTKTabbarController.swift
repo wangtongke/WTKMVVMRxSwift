@@ -26,6 +26,8 @@ class WTKTabbarController: UITabBarController {
     func initObj(){
         services = WTKViewModelNvigationImpl()
         naviArray = NSMutableArray.init()
+        
+        
     }
     
 //    MARK: - 动画
@@ -53,19 +55,28 @@ class WTKTabbarController: UITabBarController {
     func initChildVC(){
         let array : NSArray = NSArray.init(contentsOfFile: Bundle.main.path(forResource: "Tabbar", ofType: "plist")!)!
         
-        for data in array {
+//        for data in array {
+//            let dic = data as! [String : String]
+//            let nav = setChildVC(vm: dic["vm"]!, vc: dic["vc"]!, title: dic["title"]!, imageName: dic["normalName"]!, selectedName: dic["selectedName"]!)
+//            addChildViewController(nav)
+//            naviArray.add(nav)
+//        }
+        for i in 0...array.count - 1 {
+            let data = array[i]
             let dic = data as! [String : String]
-            let nav = setChildVC(vm: dic["vm"]!, vc: dic["vc"]!, title: dic["title"]!, imageName: dic["normalName"]!, selectedName: dic["selectedName"]!)
+            let service = WTKViewModelNvigationImpl()
+            let nav = setChildVC(vm: dic["vm"]!, vc: dic["vc"]!, title: dic["title"]!, imageName: dic["normalName"]!, selectedName: dic["selectedName"]!,service: service)
             addChildViewController(nav)
             naviArray.add(nav)
         }
     }
     
-    func setChildVC(vm : String, vc : String, title : String, imageName : String, selectedName : String) -> WTKNavigationController {
+    func setChildVC(vm : String, vc : String, title : String, imageName : String, selectedName : String, service : WTKViewModelNvigationImpl) -> WTKNavigationController {
         let vcClass = NSClassFromString("WTKMVVMRxSwift.\(vc)") as! WTKBasedVC.Type
         let vmClass = NSClassFromString("WTKMVVMRxSwift.\(vm)")  as! WTKBasedVM.Type
-        let vm = vmClass.init(services: self.services, params: ["title" : title as AnyObject])
+        let vm = vmClass.init(services: service, params: ["title" : title as AnyObject])
         let vc = vcClass.init(viewModel: vm)
+        
         vc.tabBarItem.image = UIImage.init(named: imageName)
         vc.tabBarItem.selectedImage = UIImage.init(named: selectedName)
         vc.title = title
@@ -77,6 +88,7 @@ class WTKTabbarController: UITabBarController {
         vc.tabBarItem.setTitleTextAttributes(selectedDic, for: UIControlState.selected)
         
         let nav = WTKNavigationController.init(rootViewController: vc)
+        service.vc = nav
         
         return nav
     }

@@ -22,17 +22,31 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
 //        }
 //    }
     //choiceView
-    var choiceView : WTKHomeChoiceView!
+    var choiceView = WTKHomeChoiceView.init(title: [], frame: CGRect.init(x: 0, y: 64, width: kWidth, height: 40))
     var collectionView : UICollectionView!
     var refreshControl : CBStoreHouseRefreshControl!
+    var channelData = NSMutableArray()
+    var currentChannel : WTKChannel!
+    var currentIndex : Int = 0
+    var dataArray = NSMutableDictionary()
     
 //    TODO: LifeCycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("111111")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+
         print("1")
         let param : NSDictionary = ["gender" : WTKUser.shareInstance.sex == true ? "1" : "2","generation" : WTKUser.shareInstance.generation]
         
         print("2")
+
+        configView()
+
+
     }
     
     
@@ -44,20 +58,56 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
         viewModel.basedData.subscribe { [unowned self](event) in
             let x = event.element!
             self.choiceView.data = x as! [WTKChannel]
+            for obj in x {
+                self.channelData.add(obj)
+            }
+            guard let obj = x.firstObject as! WTKChannel! else{
+                return
+            }
+            self.currentChannel = obj
+            self.viewModel.selectedChannelCommand.onNext([0 : obj])
+            self.collectionView.reloadData()
         }.addDisposableTo(myDisposeBag)
-    
+        
+        choiceView.selectedBlock = {
+           [unowned self] (tag,channel) in
+            self.collectionView.scrollToItem(at: IndexPath.init(row: tag, section: 0), at: .left, animated: true)
+            self.currentChannel = channel
+            self.currentIndex = tag
+            self.viewModel.selectedChannelCommand.onNext([tag : channel])
+        }
+        
+        viewModel.putDetaileData
+            .asObservable()
+            .subscribe { [unowned self] (event) in
+                let x = event.element!
+                print(x)
+                guard let array = x["data"] else {
+                    return
+                }
+                self.dataArray[self.currentIndex] = array
+                if self.collectionView != nil {
+                    self.collectionView.reloadData()
+                }
+                guard let refreshControl = x["table"] else {
+                    return
+                }
+                (refreshControl as! CBStoreHouseRefreshControl).finishingLoading()
+                
+        }.addDisposableTo(myDisposeBag)
         
     }
     
     
 
     
-    override func initView() {
-        super.initView()
+    func configView() {
+        
+        
+        
         self.automaticallyAdjustsScrollViewInsets = false
         
 //        choiceView
-        choiceView = WTKHomeChoiceView.init(title: [], frame: CGRect.init(x: 0, y: 64, width: kWidth, height: 40))
         self.view.addSubview(choiceView)
         
         
@@ -71,6 +121,7 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
         collectionView.dataSource = self
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = UIColor.white
         collectionView.register(UINib.init(nibName: "WTKHomeCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "cell")
         self.view.addSubview(self.collectionView)
 
@@ -78,7 +129,28 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
     
 
     func configCellWithIndexPath(cell : WTKHomeCollectionViewCell, indexPath : IndexPath) {
-        
+        guard let array = self.dataArray[indexPath.row] else {
+            return
+        }
+        cell.updateWithData(data: array as! NSArray)
+        if cell.isInit {
+            cell.refreshComman.subscribe { [unowned self] (event) in
+                //            refresh
+                let x = event.element!
+                self.viewModel.refreshCommand.onNext(["channel" : [self.currentIndex : self.currentChannel], "table" : x])
+                }.addDisposableTo(myDisposeBag)
+            cell.selectedCommand.subscribe({ [unowned self] (event) in
+                let x = event.element!
+                self.viewModel.cellClickCommand.onNext(x)
+//                let viewModel = WTKStrategyDetaileVM.init(services: WTKViewModelNvigationImpl(), params: ["title": "攻略详情" as AnyObject])
+                //            viewModel.model = x
+                //            self.services.pushViewModel(viewModel: viewModel, animated: true)
+//                let vcClass = NSClassFromString("WTKMVVMRxSwift.WTKStrategyDetaileVC") as! WTKBasedVC.Type
+//                let vc = vcClass.init(viewModel: viewModel)
+//                self.navigationController?.pushViewController(vc, animated: true)
+            }).addDisposableTo(myDisposeBag)
+            cell.isInit = false
+        }
     }
     
 //    FIXME: collectionViewDelegate
@@ -86,11 +158,16 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! WTKHomeCollectionViewCell
         cell.viewModel = self.viewModel
         self.configCellWithIndexPath(cell: cell, indexPath: indexPath)
-        
+
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6;
+        return self.channelData.count;
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index = Int(scrollView.contentOffset.x / scrollView.frame.width)
+        self.choiceView.updateWithIndex(tag: index)
     }
     
 
@@ -114,6 +191,7 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*

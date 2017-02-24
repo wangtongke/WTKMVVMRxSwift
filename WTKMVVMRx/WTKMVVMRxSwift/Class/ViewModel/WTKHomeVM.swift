@@ -14,21 +14,28 @@ class WTKHomeVM: WTKBasedVM {
     
     var basedCommand : PublishSubject<AnyObject>!
     
-    var refreshCommand : Observable<AnyObject>!
+    var refreshCommand : PublishSubject<NSDictionary>!
     
-    var channelArray = NSMutableArray()
+    var selectedChannelCommand : PublishSubject<[Int : WTKChannel]>!
+    
+    var cellClickCommand : PublishSubject<WTKHomeModel>!
     
     var basedData : PublishSubject<NSMutableArray>!
     
+    ///data
+    var dataDic = NSMutableDictionary()
     
-    required init(services service: WTKViewModelServicesType, params param: [String : AnyObject]) {
+    var putDetaileData : Variable<NSDictionary>!
+    
+    
+    required init(services service: WTKViewModelNvigationImpl, params param: [String : AnyObject]) {
         super.init(services: service, params: param)
         configViewModel()
     }
     
     func configViewModel(){
         let ws = weakSelf(weakSelf: self) as! WTKHomeVM
-        
+        putDetaileData = Variable.init([:])
         basedCommand = PublishSubject<AnyObject>()
         basedData = PublishSubject<NSMutableArray>()
         basedCommand.asObservable().subscribe { (event) in
@@ -37,7 +44,7 @@ class WTKHomeVM: WTKBasedVM {
                 return
             }
             let param : NSDictionary = ["gender" : WTKUser.shareInstance.sex == true ? "1" : "2","generation" : WTKUser.shareInstance.generation]
-            WTKRequestManager.postWithURL(url: HomeBasedData, param: param).subscribe({ (e) in
+            WTKRequestManager.getWithURL(url: HomeBasedData, param: param).subscribe({ (e) in
                 let x = e.element! as! NSDictionary
                 let code = x["code"] as! Int
                 if code == 200
@@ -45,6 +52,7 @@ class WTKHomeVM: WTKBasedVM {
                     guard let data = x["data"]  else {
                         return
                     }
+                    wPrint(message: data)
                     let channel = (data as! NSDictionary )["channels"] as! NSArray
                     let mArray = NSMutableArray()
                     for dic in channel
@@ -52,18 +60,74 @@ class WTKHomeVM: WTKBasedVM {
                         let obj = WTKChannel.init(aDic: dic as! NSDictionary)
                         mArray.add(obj)
                     }
-                    ws.channelArray = mArray
                     ws.basedData.onNext(mArray)
+                    
                 }
             }).addDisposableTo(ws.myDisposeBag)
         }.addDisposableTo(myDisposeBag)
 
         basedCommand.onNext(1 as AnyObject)
         
-        self.refreshCommand = Observable.create({ (x) -> Disposable in
+        self.refreshCommand = PublishSubject<NSDictionary>()
+        
+        self.refreshCommand.subscribe { [unowned self](event) in
+            let xr = event.element!
+            let channelDic = xr["channel"] as! [Int : WTKChannel]
+//            gender=1&generation=1&limit=20&offset=0
+            let param = ["gender" : WTKUser.shareInstance.sex == true ? 1 : 2, "generation" : WTKUser.shareInstance.generation,"limit" : 20, "offset" : 0] as NSDictionary
+            let url = "/channels/\(channelDic.values.first!.id!)/items"
+            WTKRequestManager.getWithURL(url: url, param: param).subscribe({ (e) in
+                let x = e.element as! NSDictionary
+                if x["code"] as! Int == 200
+                {
+                    let array = (x["data"]as! NSDictionary)["items"]! as! NSArray
+                    let mArray = NSMutableArray()
+                    for dic in array
+                    {
+//                        wPrint(message: dic)
+                        let model = WTKHomeModel.init(aDic: dic as! NSDictionary)
+                        mArray.add(model)
+                    }
+                    self.dataDic[channelDic.keys.first] = mArray
+                    guard let table = xr["table"] else {
+                        ws.putDetaileData.value = ["data" : mArray ]
+                        return
+                    }
+                    ws.putDetaileData.value = ["data" : mArray, "table": table]
+                    
+                    print("------")
+                }
+            }).addDisposableTo(self.myDisposeBag)
             
-            return Disposables.create()
-        })
+        }.addDisposableTo(myDisposeBag)
+        
+        self.selectedChannelCommand = PublishSubject<[Int : WTKChannel]>()
+        self.selectedChannelCommand.subscribe { [unowned self](event) in
+            let x = event.element!
+            let data = self.dataDic[x.keys.first!]
+            if data == nil {
+                //                无此数据执行刷新
+                wPrint(message: x.keys.first!)
+                wPrint(message: self.dataDic)
+                self.refreshCommand.onNext(["channel" : x])
+            } else {
+                self.putDetaileData.value = ["data" : data]
+            }
+            
+        }.addDisposableTo(myDisposeBag)
+        
+        cellClickCommand = PublishSubject<WTKHomeModel>()
+        cellClickCommand.subscribe { [unowned self] (event) in
+            let x = event.element!
+            print(self.services)
+            let viewModel = WTKStrategyDetaileVM.init(services: WTKViewModelNvigationImpl(), params: ["title": "攻略详情" as AnyObject])
+            viewModel.model = x
+            self.services.pushViewModel(viewModel: viewModel, animated: true)
+//            let vcClass = NSClassFromString("WTKMVVMRxSwift.WTKStrategyDetaileVC") as! WTKBasedVC.Type
+//            let vc = vcClass.init(viewModel: viewModel)
+
+            
+        }.addDisposableTo(myDisposeBag)
     }
 }
 

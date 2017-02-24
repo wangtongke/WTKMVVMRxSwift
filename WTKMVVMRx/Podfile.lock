@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.3.0)
+  - IQKeyboardManager (4.0.8)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - RxCocoa (3.0.1):
@@ -16,9 +17,11 @@ PODS:
   - SDWebImage/Core (3.8.2)
   - SnapKit (3.1.2)
   - SVProgressHUD (2.1.2)
+  - WTKTransitionAnimate (1.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.3.0)
+  - IQKeyboardManager (~> 4.0.8)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
   - RxCocoa (~> 3.0.1)
@@ -28,9 +31,11 @@ DEPENDENCIES:
   - SDWebImage (~> 3.8.2)
   - SnapKit (~> 3.1.2)
   - SVProgressHUD (~> 2.1.2)
+  - WTKTransitionAnimate (~> 1.0.1)
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  IQKeyboardManager: 1a8189fa153bf09044355ee0ad36826f6767e7f7
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
@@ -40,7 +45,8 @@ SPEC CHECKSUMS:
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  WTKTransitionAnimate: 02bc7b666bf9505a488f379619bf489ca8b73319
 
-PODFILE CHECKSUM: 4fa556b49552029a037f2cc41db75927364887fe
+PODFILE CHECKSUM: 4ce7c1574cc6df1d812499bd0d6ec0aef9577f17
 
 COCOAPODS: 1.1.1

@@ -27,6 +27,8 @@ class WTKHomeChoiceView: UIView {
     var scrollView = UIScrollView()
     var bottomLine = UIView()
     var btnArray = NSMutableArray()
+    
+    var pullBtn = UIButton.init(type: UIButtonType.custom)
 
     ///btn点击回调
     var selectedBlock : (Int ,WTKChannel)->() = {
@@ -41,6 +43,10 @@ class WTKHomeChoiceView: UIView {
         data = title
         bottomView()
         initView()
+        
+    }
+    
+    func rigthView() {
         
     }
     
@@ -85,6 +91,12 @@ class WTKHomeChoiceView: UIView {
         }
         
     }
+    func updateWithIndex(tag: Int){
+        guard let currentBtn = btnArray[tag] as? UIButton else {
+            return
+        }
+        btnClick(sender: currentBtn)
+    }
     
     func btnClick(sender : UIButton) {
         wPrint(message: sender.tag)
@@ -116,10 +128,16 @@ class WTKHomeChoiceView: UIView {
     
     ///滑动
     func reloadScrollView() {
+        let width = kWidth / 6.0
         if lastIndex > 1 && lastIndex < data.count - 2 {
 //            当前选择滚到到中间
-            let width = kWidth / 6.0
             scrollView.setContentOffset(CGPoint.init(x: width * CGFloat(lastIndex - 2), y: 0), animated: true)
+        }
+        if lastIndex == 1 {
+            scrollView.setContentOffset(CGPoint.init(x: 0, y: 0), animated: true)
+        }
+        if lastIndex == data.count - 2 && data.count > 5{
+            scrollView.setContentOffset(CGPoint.init(x: width * CGFloat(lastIndex - 3), y: 0), animated: true)
         }
     }
     

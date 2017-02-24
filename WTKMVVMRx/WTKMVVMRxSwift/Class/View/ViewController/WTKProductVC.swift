@@ -8,11 +8,45 @@
 
 import UIKit
 
-class WTKProductVC: WTKBasedVC {
+class WTKProductVC: WTKBasedVC,UITableViewDelegate,UITableViewDataSource {
 
+    var refreshControl : CBStoreHouseRefreshControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = THEME_COLOR
+        let tableView = UITableView.init(frame: self.view.frame, style: .plain)
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        self.refreshControl = CBStoreHouseRefreshControl.attach(to: tableView, target: self, refreshAction: #selector(WTKProductVC.refreshMethod), plist: "WANGTONGKE", color: UIColor.black, lineWidth: 1.5, dropHeight: 90, scale: 1, horizontalRandomness: 150, reverseLoadingAnimation: true, internalAnimationFactor: 0.5)
+        self.view.addSubview(tableView)
+        
+    }
+    
+    func refreshMethod() {
+        let delay = DispatchTime.now() + DispatchTimeInterval.seconds(3)
+        DispatchQueue.main.asyncAfter(deadline: delay) { 
+            self.refreshControl.finishingLoading()
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentInset.top)
+        self.refreshControl.scrollViewDidScroll()
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.refreshControl.scrollViewDidEndDragging()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.backgroundColor = UIColor.purple
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
     }
 
     override func didReceiveMemoryWarning() {

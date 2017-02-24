@@ -19,7 +19,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabbar = WTKTabbarController()
         window?.rootViewController = tabbar
 
+        registShareSDK()
+        
+        
         return true
+    }
+    
+    
+    func registShareSDK() {
+        DispatchQueue.global().async {
+            ShareSDK.registerApp("1b7155c23c5d4", activePlatforms: [SSDKPlatformType.subTypeQQFriend.rawValue,SSDKPlatformType.subTypeQZone.rawValue,SSDKPlatformType.typeWechat.rawValue,SSDKPlatformType.subTypeWechatTimeline.rawValue], onImport: { (x) in
+                switch x {
+//                case .subTypeQQFriend:
+//                    ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
+//                    break
+//                case .subTypeQZone:
+//                    ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
+//                    break
+                case .typeQQ:
+                    ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
+                    break
+                case SSDKPlatformType.typeWechat:
+                    ShareSDKConnector.connectWeChat(WXApi.classForCoder())
+                    break
+                    
+                case .subTypeWechatTimeline:
+                    ShareSDKConnector.connectWeChat(WXApi.classForCoder())
+                    break
+                default :
+                    break
+                }
+            }, onConfiguration: { (platform : SSDKPlatformType, appInfo : NSMutableDictionary?) in
+                switch platform {
+                case .typeWechat:
+                    appInfo?.ssdkSetupWeChat(byAppId: "wx75e61fb94ed8a102", appSecret: "683b9e519155bdd56348238508461ecf")
+                    break
+                case .subTypeWechatTimeline:
+                    appInfo?.ssdkSetupWeChat(byAppId: "wx75e61fb94ed8a102", appSecret: "683b9e519155bdd56348238508461ecf")
+                    break
+                case .typeQQ:
+                    appInfo?.ssdkSetupQQ(byAppId: "1105999338", appKey: "2jamh8NgkQSg1hux", authType: SSDKAuthTypeBoth)
+
+                    break
+                default :
+                    break
+                }
+            
+            })
+            
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

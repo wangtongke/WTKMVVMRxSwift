@@ -56,6 +56,8 @@ class WTKUser: NSObject {
         case oldType
     }
     
+    private override init() {}
+    
     
 }
     

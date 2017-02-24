@@ -1,0 +1,6 @@
+framework module WTKTransitionAnimate {
+  umbrella header "WTKTransitionAnimate-umbrella.h"
+
+  export *
+  module * { export * }
+}
