@@ -35,6 +35,8 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("111111")
+        
+        print("homehome")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
