@@ -34,6 +34,7 @@ class WTKRouter: NSObject {
                 "WTKCategoryVM":"WTKCategoryVC",
                 "WTKMeVM" : "WTKMeVC",
                 "WTKWebVM":"WTKWebVC",
-                "WTKStrategyDetaileVM" : "WTKStrategyDetaileVC"]
+                "WTKStrategyDetaileVM" : "WTKStrategyDetaileVC",
+                "WTKSearchVM" : "WTKSearchVC"]
     }
 }

@@ -117,7 +117,21 @@ class WTKHomeVC: WTKBasedVC,UICollectionViewDelegate,UICollectionViewDataSource 
         collectionView.backgroundColor = UIColor.white
         collectionView.register(UINib.init(nibName: "WTKHomeCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "cell")
         self.view.addSubview(self.collectionView)
+        
+        
+//    MARK: 导航搜索
+        let btn = UIButton.init(type: .custom)
+        btn.frame = CGRect.init(x: 0, y: 0, width: 25, height: 23)
+        btn.setBackgroundImage(UIImage.init(named: "w_search"), for: .normal)
+        btn.addTarget(self, action: #selector(WTKHomeVC.searchBtnClick), for: .touchUpInside)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: btn)
+        
 
+    }
+    
+    func searchBtnClick() {
+        viewModel.searchCommand.onNext(1)
     }
     
 
