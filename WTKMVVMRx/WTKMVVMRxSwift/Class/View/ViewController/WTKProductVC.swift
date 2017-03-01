@@ -10,6 +10,9 @@ import UIKit
 
 class WTKProductVC: WTKBasedVC,UITableViewDelegate,UITableViewDataSource {
 
+    var viewModel : WTKProductVM{
+        return self.vm as! WTKProductVM
+    }
     var refreshControl : CBStoreHouseRefreshControl!
     
     override func viewDidLoad() {
@@ -25,9 +28,11 @@ class WTKProductVC: WTKBasedVC,UITableViewDelegate,UITableViewDataSource {
     }
     
     func refreshMethod() {
+        self.viewModel.refreshCommand.onNext(UICollectionView.init(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout()))
         let delay = DispatchTime.now() + DispatchTimeInterval.seconds(3)
         DispatchQueue.main.asyncAfter(deadline: delay) { 
             self.refreshControl.finishingLoading()
+            
         }
     }
     

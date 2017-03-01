@@ -35,6 +35,7 @@
 		F5317CF91E25D60300D8F9AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5317CF71E25D60300D8F9AB /* LaunchScreen.storyboard */; };
 		F5317D041E25D60400D8F9AB /* WTKMVVMRxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5317D031E25D60400D8F9AB /* WTKMVVMRxSwiftTests.swift */; };
 		F5317D0F1E25D60400D8F9AB /* WTKMVVMRxSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5317D0E1E25D60400D8F9AB /* WTKMVVMRxSwiftUITests.swift */; };
+		F540274F1E666ABA0085A999 /* WTKProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F540274E1E666ABA0085A999 /* WTKProductModel.swift */; };
 		F563AC091E4DA11B0044659E /* WTKRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563AC081E4DA11B0044659E /* WTKRouter.swift */; };
 		F563AC131E4DA8620044659E /* WTKWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563AC121E4DA8620044659E /* WTKWebVC.swift */; };
 		F563AC151E4DA8780044659E /* WTKWebVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563AC141E4DA8770044659E /* WTKWebVM.swift */; };
@@ -148,6 +149,7 @@
 		F5317D0E1E25D60400D8F9AB /* WTKMVVMRxSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTKMVVMRxSwiftUITests.swift; sourceTree = "<group>"; };
 		F5317D101E25D60400D8F9AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5317D1C1E25E4C300D8F9AB /* WTKMVVMRxSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WTKMVVMRxSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		F540274E1E666ABA0085A999 /* WTKProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKProductModel.swift; sourceTree = "<group>"; };
 		F563AC081E4DA11B0044659E /* WTKRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKRouter.swift; sourceTree = "<group>"; };
 		F563AC121E4DA8620044659E /* WTKWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKWebVC.swift; sourceTree = "<group>"; };
 		F563AC141E4DA8770044659E /* WTKWebVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTKWebVM.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				F50C01DF1E35F5BA00B03DBA /* WTKUser.swift */,
 				F5FF286A1E485952008E3091 /* WTKChannel.swift */,
 				F5FF28731E49CF84008E3091 /* WTKHomeModel.swift */,
+				F540274E1E666ABA0085A999 /* WTKProductModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F540274F1E666ABA0085A999 /* WTKProductModel.swift in Sources */,
 				F501D7211E271FCB0042E21F /* WTKHomeVM.swift in Sources */,
 				F501D7271E271FFC0042E21F /* WTKMeVM.swift in Sources */,
 				F5317CF11E25D60300D8F9AB /* ViewController.swift in Sources */,
