@@ -17,7 +17,7 @@ class WTKSearchVM: WTKBasedVM {
     
     
     func configViewModel(){
-        
+        print("123")
     }
     
 }
