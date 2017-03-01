@@ -36,6 +36,7 @@ class WTKSearchVC: WTKBasedVC,UISearchBarDelegate {
         self.navigationItem.titleView = bgView
         bgView.addSubview(self.searchBar)
         print(123)
+        print("wwww")
     }
 
     override func didReceiveMemoryWarning() {
