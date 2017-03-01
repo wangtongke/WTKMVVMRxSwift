@@ -27,6 +27,8 @@ class WTKHomeVM: WTKBasedVM {
     
     var putDetaileData : Variable<NSDictionary>!
     
+    var searchCommand : PublishSubject<Int>!
+    
     
     required init(services service: WTKViewModelNvigationImpl, params param: [String : AnyObject]) {
         super.init(services: service, params: param)
@@ -120,7 +122,7 @@ class WTKHomeVM: WTKBasedVM {
         cellClickCommand.subscribe { [unowned self] (event) in
             let x = event.element!
             print(self.services)
-            let viewModel = WTKStrategyDetaileVM.init(services: WTKViewModelNvigationImpl(), params: ["title": "攻略详情" as AnyObject])
+            let viewModel = WTKStrategyDetaileVM.init(services: self.services, params: ["title": "攻略详情" as AnyObject])
             viewModel.model = x
             self.services.pushViewModel(viewModel: viewModel, animated: true)
 //            let vcClass = NSClassFromString("WTKMVVMRxSwift.WTKStrategyDetaileVC") as! WTKBasedVC.Type
@@ -128,7 +130,18 @@ class WTKHomeVM: WTKBasedVM {
 
             
         }.addDisposableTo(myDisposeBag)
+        
+        
+        searchCommand = PublishSubject<Int>()
+        searchCommand.subscribe { (event) in
+            let viewModel = WTKSearchVM.init(services: self.services, params: ["title":"搜索" as AnyObject])
+            self.services.pushViewModel(viewModel: viewModel, animated: true)
+            
+        }.addDisposableTo(myDisposeBag)
     }
+    
+    
+    
 }
 
 //http://api.dantangapp.com/v2/channels/14/items?gender=1&generation=1&limit=20&offset=0
