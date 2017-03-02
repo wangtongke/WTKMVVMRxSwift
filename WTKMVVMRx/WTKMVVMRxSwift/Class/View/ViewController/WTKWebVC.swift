@@ -15,7 +15,7 @@ class WTKWebVC: WTKBasedVC {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(222)
         // Do any additional setup after loading the view.
     }
 
